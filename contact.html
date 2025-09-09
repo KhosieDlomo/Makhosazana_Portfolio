@@ -1,128 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Contact</title>
-    <!-- <script src="https://cdn.tailwindscss.com"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            }
+          },
+          animation: {
+            fadeIn: 'fadeIn 1s ease-out',
+          }
+        }
+      }
+    }
+  </script>
+  <title>Contact | MJR Dlomo</title>
 </head>
-<body>
-    <div class="hero-header">
-        <nav class="navbar">
-            <div class="left-nav">
-                <button class="menu-btn navbar-toggle">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-                <a class="navbar-brand" href="index.html">MJR Dlomo</a>
-            </div>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-                <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="toggle">
-                <i class="fa fa-sun"></i>
-            </div>
-        </nav>
-        
+<body class="min-h-screen flex flex-col font-poppins bg-[#f2f2f2] text-[#111] dark:bg-[#111] dark:text-[#f2f2f2] transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="flex justify-center items-center bg-[#f2f2f2] dark:bg-[#111] p-4 w-full fixed top-0 z-50 shadow-md">
+    <div class="absolute left-4 flex items-center gap-2">
+      <button class="menu-btn bg-transparent border-none text-[#111] dark:text-[#f2f2f2] font-bold cursor-pointer text-sm">
+        <i class="fa fa-bars mr-1"></i> Menu
+      </button>
+      <a class="font-bold text-lg uppercase no-underline text-[#111] dark:text-[#f2f2f2] tracking-widest" href="index.html">MJR Dlomo</a>
     </div>
+    <ul class="flex gap-6 hidden md:flex">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About Me</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+      <li><a href="resume.html" class="nav-link">Resume</a></li>
+      <li><a href="project.html" class="nav-link">Projects</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="absolute right-4 flex items-center gap-4">
+      <button id="theme-toggle" class="h-10 w-10 bg-[#111] dark:bg-[#f2f2f2] rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-gray-800 dark:hover:bg-gray-300" aria-label="Toggle dark mode">
+        <i class="fa fa-moon text-[#f2f2f2] dark:hidden"></i>
+        <i class="fa fa-sun text-[#111] hidden dark:block"></i>
+      </button>
+    </div>
+  </nav>
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-              <h1 class="big big-2">Contact</h1>
-              <h2 class="mb-4">Contact Me</h2>
-              <p>I'd Love To Hear From You.</p>
-            </div>
-          </div>
-  
-          <div class="row d-flex contact-info mb-5">
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-                <div class="align-self-stretch box p-4 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="icon-map-signs"></span>
-                    </div>
-                    <h3 class="mb-4">Address</h3>
-                  <p>Ivory Park 2 Ext 5, Midrand, 1693, Johannesburg, Gauteng, South Africa</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-                <div class="align-self-stretch box p-4 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="icon-phone2"></span>
-                    </div>
-                    <h3 class="mb-4">Contact Number</h3>
-                  <p><a href="tel://1234567920">+27 79 575 5795</a></p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-                <div class="align-self-stretch box p-4 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="icon-paper-plane"></span>
-                    </div>
-                    <h3 class="mb-4">Email Address</h3>
-                  <p><a href="mailto:info@yoursite.com">makhosijdlomo97@gmail.com</a></p>
-                </div>
-            </div>
-          </div>
-  
-          <div class="contact-form">
-            <div class="container">
-              <form name="contactForm" id="contactForm" method="post" action="">
-                <fieldset>
-                    <div class="form-group">
-                        <input  name="contactName" type="text" id="contactName" placeholder="Your Name" value="" required="">
-                    </div>
-                    <div class="form-group">
-                        <input name="ContactEmail" type="text" id="ContactEmail" placeholder="Your Email" value="" required="">
-                    </div>
-                    <div class="form-group">
-                        <input name="ContactSubject" type="text" id="ContactSubject" placeholder="Subject" value="">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="ContactMessage" id="ContactMessage" cols="30" rows="7" placeholder="Message" required=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                    </div>
-                </fieldset>
-              </form>
-            </div>
-          </div>
+  <!-- Contact Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center relative pt-24 bg-cover bg-center animate-fadeIn">
+    <div class="relative z-10 text-center px-4 max-w-3xl w-full">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-2 text-blue-600 dark:text-blue-400">Contact</h1>
+      <h2 class="mb-4 text-2xl font-semibold">Contact Me</h2>
+      <p class="mb-8 text-gray-700 dark:text-gray-300">I'd Love To Hear From You.</p>
+
+      <!-- Info Boxes -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 flex flex-col items-center">
+          <i class="fa fa-map-marker-alt text-2xl text-blue-600 dark:text-blue-400 mb-2"></i>
+          <h3 class="mb-2 font-bold">Address</h3>
+          <p>Ivory Park 2 Ext 5, Midrand, 1693, Johannesburg, Gauteng, South Africa</p>
         </div>
-      </section>
-
-    <footer>
-        <div class="row">
-  
-            <div class="col-six tab-full pull-right social">
-  
-                <ul class="footer-social">        
-        <li><a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://github.com/KhosieDlomo"><i class="fa fa-github"></i></a></li>
-     </ul> 
-              
+        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 flex flex-col items-center">
+          <i class="fa fa-phone text-2xl text-blue-600 dark:text-blue-400 mb-2"></i>
+          <h3 class="mb-2 font-bold">Contact Number</h3>
+          <p><a href="tel:+27795755795" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">+27 79 575 5795</a></p>
+        </div>
+        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 flex flex-col items-center">
+          <i class="fa fa-envelope text-2xl text-blue-600 dark:text-blue-400 mb-2"></i>
+          <h3 class="mb-2 font-bold">Email Address</h3>
+          <p><a href="mailto:makhosijdlomo97@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">makhosijdlomo97@gmail.com</a></p>
+        </div>
       </div>
-  
-         <div class="col-six tab-full">
-          <div class="copyright">
-             <span>© Copyright MaDlomo 2025.</span> 
-             <span>Design by MJR Dlomo</span>	         	
-          </div>		                  
-          </div>
-  
-          <div id="go-top">
-          <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-       </div>
-  
-         </div>      	
-  </footer>  
 
+      <!-- Contact Form -->
+      <form name="contactForm" id="contactForm" method="post" action="" class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-8 w-full max-w-xl mx-auto">
+        <fieldset class="flex flex-col gap-4">
+          <input name="contactName" type="text" id="contactName" placeholder="Your Name" required class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600" />
+          <input name="ContactEmail" type="email" id="ContactEmail" placeholder="Your Email" required class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600" />
+          <input name="ContactSubject" type="text" id="ContactSubject" placeholder="Subject" class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600" />
+          <textarea name="ContactMessage" id="ContactMessage" cols="30" rows="5" placeholder="Message" required class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+          <button type="submit" class="bg-blue-600 text-white font-semibold rounded px-8 py-3 hover:bg-blue-700 transition-colors duration-300">Send Message</button>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-[#111] dark:bg-gray-800 py-8 text-white">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex gap-6 mb-4 md:mb-0">
+        <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-white text-xl hover:text-blue-400 transition-colors duration-300"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-white text-xl hover:text-gray-400 transition-colors duration-300"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="text-sm text-center md:text-left mb-4 md:mb-0">
+        <span>© Copyright MaDlomo 2025.</span> 
+        <span>Design by MJR Dlomo</span>
+      </div>
+      <a class="text-white hover:text-blue-400 transition-colors duration-300 back-to-top" title="Back to Top" href="#">
+        <i class="fa-solid fa-arrow-up-long text-xl"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Dark/Light mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('nav ul');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+
+    // Smooth Scroll to Top
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <style>
+    .nav-link {
+      color: #111;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.3s;
+    }
+    .dark .nav-link {
+      color: #f2f2f2;
+    }
+    .nav-link:hover {
+      color: #2563eb;
+    }
+    .dark .nav-link:hover {
+      color: #60a5fa;
+    }
+  </style>
 </body>
 </html>
