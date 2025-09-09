@@ -3,42 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          },
+          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
           keyframes: {
             fadeIn: {
               '0%': { opacity: 0, transform: 'translateY(20px)' },
               '100%': { opacity: 1, transform: 'translateY(0)' },
             }
           },
-          animation: {
-            fadeIn: 'fadeIn 1s ease-out',
-          }
+          animation: { fadeIn: 'fadeIn 1s ease-out' }
         }
       }
     }
   </script>
+
   <title>Miss Dlomo MJR Portfolio</title>
 </head>
 <body class="min-h-screen flex flex-col font-poppins bg-[#f2f2f2] text-[#111] dark:bg-[#111] dark:text-[#f2f2f2] transition-colors duration-300">
 
   <!-- Navbar -->
   <nav class="flex justify-between items-center bg-[#f2f2f2] dark:bg-[#111] p-4 w-full fixed top-0 z-50 shadow-md">
+    <!-- Brand -->
     <div class="flex items-center gap-2">
-      <a class="font-bold text-lg uppercase tracking-widest text-[#111] dark:text-[#f2f2f2]" href="index.html">MJR Dlomo</a>
+      <a class="font-bold text-lg uppercase no-underline text-[#111] dark:text-[#f2f2f2] tracking-widest" href="index.html">MJR Dlomo</a>
     </div>
 
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-6">
+    <!-- Links -->
+    <ul class="flex gap-6 hidden md:flex">
       <li><a href="index.html" class="nav-link">Home</a></li>
       <li><a href="about.html" class="nav-link">About Me</a></li>
       <li><a href="skills.html" class="nav-link">Skills</a></li>
@@ -47,51 +49,57 @@
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
 
-    <div class="flex items-center gap-4">
-      <a href="cv.pdf" download class="px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition-colors duration-300 text-sm">Download CV</a>
+    <!-- Right: Socials + Theme Toggle + CV -->
+    <div class="flex items-center gap-3">
+      <!-- CV Download -->
+      <a href="cv.pdf" download class="px-3 py-1 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition-colors duration-300 text-sm">Download CV</a>
+
+      <!-- Social Icons -->
+      <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-[#111] dark:text-[#f2f2f2] text-xl hover:text-blue-400 transition-colors duration-300"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-[#111] dark:text-[#f2f2f2] text-xl hover:text-gray-400 transition-colors duration-300"><i class="fa-brands fa-github"></i></a>
+      
+
+      <!-- Theme Toggle -->
       <button id="theme-toggle" class="h-10 w-10 bg-[#111] dark:bg-[#f2f2f2] rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-gray-800 dark:hover:bg-gray-300" aria-label="Toggle dark mode">
         <i class="fa fa-moon text-[#f2f2f2] dark:hidden"></i>
         <i class="fa fa-sun text-[#111] hidden dark:block"></i>
       </button>
+
       <!-- Mobile Menu Button -->
       <button class="md:hidden menu-btn text-[#111] dark:text-[#f2f2f2] text-2xl ml-2"><i class="fa fa-bars"></i></button>
     </div>
-
-    <!-- Mobile Menu -->
-    <ul id="mobile-menu" class="absolute top-full left-0 w-full bg-[#f2f2f2] dark:bg-[#111] flex-col gap-4 px-4 py-2 hidden md:hidden">
-      <li><a href="index.html" class="nav-link block py-2">Home</a></li>
-      <li><a href="about.html" class="nav-link block py-2">About Me</a></li>
-      <li><a href="skills.html" class="nav-link block py-2">Skills</a></li>
-      <li><a href="resume.html" class="nav-link block py-2">Resume</a></li>
-      <li><a href="project.html" class="nav-link block py-2">Projects</a></li>
-      <li><a href="contact.html" class="nav-link block py-2">Contact</a></li>
-    </ul>
   </nav>
 
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu hidden bg-[#f2f2f2] dark:bg-[#111] w-full fixed top-16 left-0 z-40 shadow-md md:hidden flex flex-col items-center py-4">
+    <ul class="flex flex-col gap-4 text-center">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About Me</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+      <li><a href="resume.html" class="nav-link">Resume</a></li>
+      <li><a href="project.html" class="nav-link">Projects</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center relative pt-20 bg-cover bg-center" style="background-image: url('images/hero-bg.jpg');">
+  <section class="min-h-screen flex flex-col justify-center items-center relative pt-16 bg-cover bg-center" style="background-image: url('images/hero-bg.jpg');">
     <div class="absolute inset-0 bg-black/40 z-0"></div>
-
     <div class="relative z-10 text-center px-4 max-w-4xl animate-fadeIn">
-      <h5 class="text-lg sm:text-xl font-semibold mb-2 text-white">Hello.</h5>
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white">I'm Makhosazana Jennifer Rose Dlomo.</h1>
+      <h5 class="text-lg font-semibold mb-2 text-white">Hello.</h5>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-white">I'm Makhosazana Jennifer Rose Dlomo.</h1>
 
-      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8 flex-wrap">
-        <span class="bg-white/80 text-gray-900 px-4 py-2 rounded-full font-semibold">Software Engineer</span>
+      <div class="flex flex-col md:flex-row gap-3 justify-center items-center mb-8">
+        <span class="bg-blue-600/80 text-white px-4 py-2 rounded-full font-semibold">Software Engineer</span>
         <span class="bg-blue-600/80 text-white px-4 py-2 rounded-full font-semibold">Python Developer</span>
         <span class="bg-blue-600/80 text-white px-4 py-2 rounded-full font-semibold">Java Developer</span>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-        <a class="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-full px-8 py-3 transition-colors duration-300" href="about.html">More About me</a>
-        <a href="contact.html" class="w-full sm:w-auto bg-blue-600 text-white font-semibold rounded-full px-8 py-3 hover:bg-blue-700 transition-colors duration-300">Hire Me</a>
-        <a href="project.html" class="w-full sm:w-auto border-2 border-white text-white font-semibold rounded-full px-8 py-3 hover:bg-white hover:text-gray-900 transition-colors duration-300">My work</a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a class="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-full px-8 py-3 transition-colors duration-300" href="about.html">More About Me</a>
+        <a href="contact.html" class="bg-blue-600 text-white font-semibold rounded-full px-8 py-3 hover:bg-blue-700 transition-colors duration-300">Hire Me</a>
+        <a href="project.html" class="border-2 border-white text-white font-semibold rounded-full px-8 py-3 hover:bg-white hover:text-gray-900 transition-colors duration-300">My Work</a>
       </div>
-
-      <ul class="relative z-10 flex justify-center gap-6 mt-12 flex-wrap">
-        <li><a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-white text-2xl hover:text-blue-400 transition-colors duration-300"><i class="fa-brands fa-linkedin"></i></a></li>
-        <li><a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-white text-2xl hover:text-gray-400 transition-colors duration-300"><i class="fa-brands fa-github"></i></a></li>
-      </ul>
     </div>
   </section>
 
@@ -117,35 +125,31 @@
     // Dark/Light mode toggle
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-
     if (localStorage.getItem('theme') === 'dark' ||
       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
+    } else { html.classList.remove('dark'); }
 
     themeToggle.addEventListener('click', () => {
       html.classList.toggle('dark');
-      if (html.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // Mobile Menu Toggle
+    // Mobile menu toggle
     const menuBtn = document.querySelector('.menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // Smooth Scroll to Top
-    document.querySelector('.back-to-top').addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Smooth scroll to top
+    document.querySelectorAll('.back-to-top').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
   </script>
 
+  <!-- Styles -->
   <style>
     .nav-link {
       @apply text-[#111] dark:text-[#f2f2f2] font-medium px-2 py-1 transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400;
