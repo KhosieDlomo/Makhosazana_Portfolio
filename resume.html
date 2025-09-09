@@ -1,265 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Resume</title>
-    <!-- <script src="https://cdn.tailwindscss.com"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            }
+          },
+          animation: {
+            fadeIn: 'fadeIn 1s ease-out',
+          }
+        }
+      }
+    }
+  </script>
+  <title>Resume | MJR Dlomo</title>
 </head>
-<body>
-    <div class="hero-header">
-        <nav class="navbar">
-            <div class="left-nav">
-                <button class="menu-btn navbar-toggle">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-                <a class="navbar-brand" href="index.html">MJR Dlomo</a>
-            </div>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-                <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="toggle">
-                <i class="fa fa-sun"></i>
-            </div>
-        </nav>
-        
+<body id="top" class="min-h-screen flex flex-col font-poppins bg-[#f2f2f2] text-[#111] dark:bg-[#111] dark:text-[#f2f2f2] transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="flex justify-center items-center bg-[#f2f2f2] dark:bg-[#111] p-4 w-full fixed top-0 z-50 shadow-md">
+    <div class="absolute left-4 flex items-center gap-2">
+      <button class="menu-btn bg-transparent border-none text-[#111] dark:text-[#f2f2f2] font-bold cursor-pointer text-sm">
+        <i class="fa fa-bars mr-1"></i> Menu
+      </button>
+      <a class="font-bold text-lg uppercase no-underline text-[#111] dark:text-[#f2f2f2] tracking-widest" href="index.html">MJR Dlomo</a>
     </div>
+    <ul class="flex gap-6 hidden md:flex">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About Me</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+      <li><a href="resume.html" class="nav-link">Resume</a></li>
+      <li><a href="project.html" class="nav-link">Projects</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="absolute right-4 flex items-center gap-4">
+      <button id="theme-toggle" class="h-10 w-10 bg-[#111] dark:bg-[#f2f2f2] rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-gray-800 dark:hover:bg-gray-300" aria-label="Toggle dark mode">
+        <i class="fa fa-moon text-[#f2f2f2] dark:hidden"></i>
+        <i class="fa fa-sun text-[#111] hidden dark:block"></i>
+      </button>
+    </div>
+  </nav>
 
-    <section id="resume" class="grey-section">
-        <div class="section-into">
-            <div class="container">
-                <h2>Resume</h2>
-                <h1>More of my credentials.</h1>
-                <p class="lead">....</p>
-            </div>
+  <!-- Resume Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center relative pt-24 animate-fadeIn">
+    <div class="relative z-10 text-center px-4 max-w-5xl w-full">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-2 text-blue-600 dark:text-blue-400">Resume</h2>
+      <p class="mb-8 text-gray-700 dark:text-gray-300">My professional journey and education background</p>
+
+      <!-- Work Experience -->
+      <h3 class="text-2xl font-bold mb-6 text-left">Work Experience</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 text-left">
+          <h4 class="text-xl font-bold mb-2">Freelance Software Developer</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2020 – Present</p>
+          <p class="mb-2">Building web and mobile applications for clients. Focused on modern frameworks, responsive design, and database-driven apps.</p>
+          <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm">
+            <li>Developed and deployed full-stack apps</li>
+            <li>Worked with GitHub for version control</li>
+            <li>Maintained client documentation</li>
+          </ul>
         </div>
-        <div class="resume-timeline">
-            <div class="resume-header">
-                <h2>Work Experience</h2>
-            </div>
-            <div class="container">
-                <div class="timeline-wrap">
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Junior Business analyst</h3>
-                            <p>March 2024 - July 2024</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>Kaelo</h4>
-                            <ul>
-                                <li>Gather and interpret requirements from key stakeholders/customers in line with business analysis frameworks.</li>
-                                <li>Analyze and understand the business requirements, and through a structured process document, validate and translate these into requirement specifications and functional specifications to be used by developers in crafting technical solutions.</li>
-                                <lil>Collaborate closely with business representatives, solutions teams, and a variety of end-users to ensure requirements compatibility and end-user satisfaction.</lil>
-                                <lil>Participate in user acceptance testing and guide users to ensure that the designed solution ultimately meets business requirements.</lil>
-                                <lil>Define the success criteria using scenario testing and test cases to ensure that testing covers all aspects of the business specification.</lil>
-                                <lil>Test and validate the functionality of all technical solutions in line with business requirements on completion of development to ensure that business requirements are met in the implemented solutions.</lil>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>System Development Intern</h3>
-                            <p>March 2023 - February 2024</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>Kaelo</h4>
-                            <ul>
-                                <li>Test, maintain, and recommend software improvements to ensure strong functionality and optimization.</li>
-                                <li>Independently install, customize, and integrate commercial software packages.</li>
-                                <li>Analyze user requirements and convert requirements to design documents.</li>
-                                <li>Reviewing current systems, developing ideas for improving systems.</li>
-                                <li>Testing the product before going live.</li>
-                                <li>Preparing user training manuals, and maintaining systems once they start running.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Examination Assistant</h3>
-                            <p>September 2020 - December 2021</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>South West Gauteng College</h4>
-                            <ul>
-                                <li>Providing general assistance in moving examination materials.</li>
-                                <li>Ensuring that all candidate's scripts on the mark sheet are batched correctly.</li>
-                                <li>Adequately assist the examination officer by Inspecting examination rooms to gauge suitability for impending exams.</li>
-                                <li>Assisting the Chief Marker in ensuring that they received all scripts per the mark sheet list.</li>
-                                <li>Assists markers that additional marks for subsections of questions are correct and the total is correctly transferred.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>IT Intern</h3>
-                            <p>March 2020 - December 2020</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>Yarona Core</h4>
-                            <ul>
-                                <li>Installing and configuring computer hardware, software, systems, and networks.</li>
-                                <li>Establishes and maintains network performance.</li>
-                                <li>Builds net configurations and connections.</li>
-                                <li>Troubleshoots network problems.</li>
-                                <li>Establishes networking environment by designing system configuration and directing system installation.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 text-left">
+          <h4 class="text-xl font-bold mb-2">IT Support Intern</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2019 – 2020</p>
+          <p class="mb-2">Provided technical support, troubleshooting, and network setup in a corporate environment.</p>
+          <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm">
+            <li>Assisted users with software/hardware issues</li>
+            <li>Installed and configured workstations</li>
+            <li>Documented troubleshooting processes</li>
+          </ul>
         </div>
-        <div class="resume-timeline">
-            <div class="resume-header">
-                <h2>Education</h2>
-            </div>
-            <div class="container">
-                <div class="timeline-wrap">
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Bachelor of Science in Computing</h3>
-                            <p>2024 - Present</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>University of South Africa</h4>
-                            <p>NQF 7</p>
-                        </div>
-                    </div>
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Software Engineer</h3>
-                            <p>2024 - Present</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>WeThinkCode</h4>
-                            <p>NQF 6</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Higher Certificate in Mathematics and Statistics</h3>
-                            <p>2022 - 2023</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>University of South Africa</h4>
-                            <p>NQF 5</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Software Developmente</h3>
-                            <p>2023</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>Impactful Specialist Solution</h4>
-                            <p>NQF 5</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Technical Support</h3>
-                            <p>2022</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>Uconomy (Mogapi Education Group)</h4>
-                            <p>NQF 4</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Infomation Technology and Computer Science</h3>
-                            <p>2017 - 2019</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>South West Gauteng College</h4>
-                            <p>NCV L2 - L4</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-block">
-                        <div class="timeline-icon">
-                            <i class="fa fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-header">
-                            <h3>Science stream</h3>
-                            <p>2015</p>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>Jiyana Secondary School</h4>
-                            <p>NCS - NQF 4</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer>
-        <div class="row">
-  
-            <div class="col-six tab-full pull-right social">
-  
-                <ul class="footer-social">        
-        <li><a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://github.com/KhosieDlomo"><i class="fa fa-github"></i></a></li>
-     </ul> 
-              
       </div>
-  
-         <div class="col-six tab-full">
-          <div class="copyright">
-             <span>© Copyright MaDlomo 2025.</span> 
-             <span>Design by MJR Dlomo</span>	         	
-          </div>		                  
-          </div>
-  
-          <div id="go-top">
-          <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-       </div>
-  
-         </div>      	
-  </footer>  
 
+      <!-- Education -->
+      <h3 class="text-2xl font-bold mb-6 text-left">Education</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 text-left">
+          <h4 class="text-xl font-bold mb-2">Software Engineering</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2024 – Present</p>
+          <p>Currently pursuing advanced knowledge in software development, algorithms, and systems design.</p>
+        </div>
+
+        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 text-left">
+          <h4 class="text-xl font-bold mb-2">NCV Level 4 – Information Technology & Computer Science</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Completed 2019</p>
+          <p>Covered networking, technical support, and programming fundamentals with hands-on projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-[#111] dark:bg-gray-800 py-8 text-white">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex gap-6 mb-4 md:mb-0">
+        <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-white text-xl hover:text-blue-400 transition-colors duration-300"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-white text-xl hover:text-gray-400 transition-colors duration-300"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="text-sm text-center md:text-left mb-4 md:mb-0">
+        <span>© Copyright MaDlomo 2025.</span>
+        <span>Design by MJR Dlomo</span>
+      </div>
+      <a class="text-white hover:text-blue-400 transition-colors duration-300 back-to-top" title="Back to Top" href="#top">
+        <i class="fa-solid fa-arrow-up-long text-xl"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Dark/Light mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('nav ul');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+
+    // Smooth Scroll to Top
+    document.querySelector('.back-to-top').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <style>
+    .nav-link {
+      color: #111;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.3s;
+    }
+    .dark .nav-link {
+      color: #f2f2f2;
+    }
+    .nav-link:hover {
+      color: #2563eb;
+    }
+    .dark .nav-link:hover {
+      color: #60a5fa;
+    }
+  </style>
 </body>
 </html>
