@@ -1,103 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>About</title>
-    <!-- <script src="https://cdn.tailwindscss.com"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            }
+          },
+          animation: {
+            fadeIn: 'fadeIn 1s ease-out',
+          }
+        }
+      }
+    }
+  </script>
+  <title>About | MJR Dlomo</title>
 </head>
-<body>
-    <div class="hero-header">
-        <nav class="navbar">
-            <div class="left-nav">
-                <button class="menu-btn navbar-toggle">
-                    <span class="oi oi-menu"></span> Menu
-                </button>
-                <a class="navbar-brand" href="index.html">MJR Dlomo</a>
-            </div>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-                <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="toggle">
-                <i class="fa fa-sun"></i>
-            </div>
-        </nav>
-        
-    </div> 
-    
-    <section id="about">
-        <div class="container">
-            <div class="row d-flex">
-                <h4>About</h4>
-                <h1>Let me introduce myself.</h1>
-                <div class="intro-info">
-                    <img src="#" alt="#">
-                    <p class="Lead">I am a Software Engineering student at WeThinkCode, focusing on building a strong foundation in Python programming. I have a solid understanding of Mathematics and Statistics, complemented by certifications, including Technical Support (NQF Level 4) and System Development (NQF Level 5). These qualifications, combined with my ongoing studies, have equipped me with foundational technical skills and a problem-solving mindset essential for the IT industry.</p>
-                </div>
-            </div>
-        </div>
-        <div class="about-content">
-            <div class="col-six tab-full">
-                <h3>Objective</h3>
-                <p>I am currently pursuing a career as an entry-level developer in the IT industry while studying Software Engineering. My goal is to secure a position that allows me to continue learning, apply my existing skills and knowledge, and gain hands-on experience in a dynamic environment. I am committed to delivering high-quality work and upholding professional, dependable, and honest behavior. I thrive on opportunities to acquire new skills, achieve diverse objectives, and contribute expert services in a stimulating and growth-oriented workplace.</p>
-                <ul class="profile">
-                    <li>
-                        <strong>Fullname:</strong>
-                        <span>Makhosazana Jennifer Rose Dlomo</span>
-                    </li>
-                    <li>
-                        <strong>Date of Birth:</strong>
-                        <span>August 20, 1997</span>
-                    </li>
-                    <li>
-                        <strong>Occupation:</strong>
-                        <span>Student</span>
-                    </li>
-                    <li>
-                        <strong>Email:</strong>
-                        <span>makhosijdlomo97@gmail.com</span>
-                    </li>
-                    <li>
-                        <strong>Phone:</strong>
-                        <span>+27 79 575 5795</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<body class="min-h-screen flex flex-col font-poppins bg-[#f2f2f2] text-[#111] dark:bg-[#111] dark:text-[#f2f2f2] transition-colors duration-300">
 
-    <footer>
-        <div class="row">
-  
-            <div class="col-six tab-full pull-right social">
-  
-                <ul class="footer-social">        
-        <li><a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://github.com/KhosieDlomo"><i class="fa fa-github"></i></a></li>
-     </ul> 
-              
+  <!-- Navbar -->
+  <nav class="flex justify-center items-center bg-[#f2f2f2] dark:bg-[#111] p-4 w-full fixed top-0 z-50 shadow-md">
+    <div class="absolute left-4 flex items-center gap-2">
+      <button class="menu-btn bg-transparent border-none text-[#111] dark:text-[#f2f2f2] font-bold cursor-pointer text-sm">
+        <i class="fa fa-bars mr-1"></i> Menu
+      </button>
+      <a class="font-bold text-lg uppercase no-underline text-[#111] dark:text-[#f2f2f2] tracking-widest" href="index.html">MJR Dlomo</a>
+    </div>
+    <ul class="flex gap-6 hidden md:flex">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About Me</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+      <li><a href="resume.html" class="nav-link">Resume</a></li>
+      <li><a href="project.html" class="nav-link">Projects</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="absolute right-4 flex items-center gap-4">
+      <button id="theme-toggle" class="h-10 w-10 bg-[#111] dark:bg-[#f2f2f2] rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-gray-800 dark:hover:bg-gray-300" aria-label="Toggle dark mode">
+        <i class="fa fa-moon text-[#f2f2f2] dark:hidden"></i>
+        <i class="fa fa-sun text-[#111] hidden dark:block"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center relative pt-24 bg-cover bg-center animate-fadeIn">
+    <div class="relative z-10 text-center px-4 max-w-3xl">
+      <h4 class="text-lg font-semibold mb-2 text-blue-600 dark:text-blue-400">About</h4>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Let me introduce myself.</h1>
+      
+      <div class="flex flex-col items-center mb-8">
+        <img src="images/profile.jpg" alt="Profile photo" class="w-32 h-32 object-cover rounded-full mb-4 bg-gray-200 dark:bg-gray-700">
+        <p class="text-base text-gray-700 dark:text-gray-300">
+          I am a Software Engineering student at WeThinkCode, focusing on building a strong foundation in Python programming. 
+          I have a solid understanding of Mathematics and Statistics, complemented by certifications, including 
+          <strong>Technical Support (NQF Level 4)</strong> and <strong>System Development (NQF Level 5)</strong>. 
+          These qualifications, combined with my ongoing studies, have equipped me with technical skills and a problem-solving mindset essential for the IT industry.
+        </p>
       </div>
-  
-         <div class="col-six tab-full">
-          <div class="copyright">
-             <span>© Copyright MaDlomo 2025.</span> 
-             <span>Design by MJR Dlomo</span>	         	
-          </div>		                  
-          </div>
-  
-          <div id="go-top">
-          <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-       </div>
-  
-         </div>      	
-  </footer>  
 
+      <div class="about-content bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 text-left">
+        <h3 class="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Objective</h3>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          I am currently pursuing a career as an entry-level developer in the IT industry while studying Software Engineering. 
+          My goal is to secure a position that allows me to continue learning, apply my existing skills and knowledge, 
+          and gain hands-on experience in a dynamic environment. I am committed to delivering high-quality work, being professional, 
+          dependable, and honest. I thrive on opportunities to acquire new skills, achieve diverse objectives, 
+          and contribute expert services in a stimulating and growth-oriented workplace.
+        </p>
+        <ul class="space-y-2">
+          <li><strong>Fullname:</strong> <span class="ml-2">Makhosazana Jennifer Rose Dlomo</span></li>
+          <li><strong>Date of Birth:</strong> <span class="ml-2">August 20, 1997</span></li>
+          <li><strong>Occupation:</strong> <span class="ml-2">Student</span></li>
+          <li><strong>Email:</strong> <span class="ml-2">makhosijdlomo97@gmail.com</span></li>
+          <li><strong>Phone:</strong> <span class="ml-2">+27 79 575 5795</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-[#111] dark:bg-gray-800 py-8 text-white">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex gap-6 mb-4 md:mb-0">
+        <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-white text-xl hover:text-blue-400 transition-colors duration-300"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-white text-xl hover:text-gray-400 transition-colors duration-300"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="text-sm text-center md:text-left mb-4 md:mb-0">
+        <span>© Copyright MaDlomo 2025.</span> 
+        <span>Design by MJR Dlomo</span>
+      </div>
+      <a class="text-white hover:text-blue-400 transition-colors duration-300 back-to-top" title="Back to Top" href="#">
+        <i class="fa-solid fa-arrow-up-long text-xl"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Dark/Light mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('nav ul');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+
+    // Smooth Scroll to Top
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <style>
+    .nav-link {
+      @apply text-[#111] dark:text-[#f2f2f2] font-medium px-2 py-1 transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400;
+    }
+  </style>
 </body>
 </html>
