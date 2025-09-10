@@ -109,21 +109,25 @@
       <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
 
         <!-- Profile Container -->
-        <div class="w-full lg:w-1/3 order-1 lg:order-1">
-          <div class="backdrop-blur-lg bg-beige/40 dark:bg-black/40 rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30">
+       <div class="w-full lg:w-1/3 order-1 lg:order-1">
+          <div class="backdrop-blur-lg bg-beige/40 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-black rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30">
             <!-- Profile Image with Gradient Fallback -->
             <div class="flex justify-center mb-6">
-              <div class="relative w-48 h-48">
+              <div class="relative w-48 h-48 group">
                 <!-- Gradient background (shown when image is missing or loading) -->
-                <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-pink shadow-lg border-4 border-beige dark:border-white flex items-center justify-center text-white text-5xl animate-float">
-                  <i class="fa-solid fa-user"></i>
+                <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black shadow-lg border-4 border-beige dark:border-white flex items-center justify-center text-white text-5xl animate-float">
+                  <span class="initials font-bold text-4xl">MJD</span>
                 </div>
                 
                 <!-- Profile image (overlays the gradient) -->
                 <img src="img/profile.jpg" 
                      alt="Profile photo of Makhosazana Dlomo" 
-                     class="absolute inset-0 w-48 h-48 object-cover rounded-full shadow-lg border-4 border-beige dark:border-white opacity-100 hover:opacity-0 transition-opacity duration-300"
-                     onerror="this.style.opacity='0'">
+                     class="absolute inset-0 w-48 h-48 object-cover rounded-full shadow-lg border-4 border-beige dark:border-white opacity-100 group-hover:opacity-0 transition-opacity duration-500 cursor-pointer"
+                     onerror="this.style.opacity='0'"
+                     loading="lazy">
+                <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500 cursor-pointer">
+                  <span class="text-white font-medium text-center px-2">View Profile</span>
+                </div>
               </div>
             </div>
 
@@ -132,33 +136,36 @@
 
             <!-- Role Badges -->
             <div class="flex flex-wrap justify-center gap-2 mb-6">
-              <span class="bg-darkpurple text-white px-4 py-2 rounded-full text-sm font-semibold">Software Engineer</span>
-              <span class="bg-pink text-white px-4 py-2 rounded-full text-sm font-semibold">Backend Developer</span>
-              <span class="bg-darkpurple text-white px-4 py-2 rounded-full text-sm font-semibold">Problem Solver</span>
+              <span class="dark:bg-gradient-to-br dark:from-black dark:to-darkpurple text-white px-4 py-2 rounded-full text-sm font-semibold">Software Engineer</span>
+              <span class="dark:bg-gradient-to-br dark:from-darkpurple dark:to-black text-white px-4 py-2 rounded-full text-sm font-semibold">Backend Developer</span>
+              <span class="dark:bg-gradient-to-br dark:from-black dark:to-darkpurple text-white px-4 py-2 rounded-full text-sm font-semibold">Problem Solver</span>
             </div>
 
             <!-- Quick Contact -->
-            <div class="bg-beige/50 dark:bg-darkpurple/20 rounded-xl p-4 mb-6">
-              <h3 class="font-semibold text-black dark:text-white mb-2">Contact Info</h3>
-              <a href="mailto:makhosijdlomo97@gmail.com" class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2 mb-1 hover:text-pink dark:hover:text-pink transition-colors">
-                <i class="fa-solid fa-envelope text-darkpurple"></i> makhosijdlomo97@gmail.com
+            <div class="bg-gradient-to-r from-beige/50 to-peach/50 dark:bg-gradient-to-br dark:from-black/30  dark:via-darkpurple/30 dark:to-black/30 rounded-xl p-4 mb-6 shadow-inner">
+              <h3 class="font-semibold text-black dark:text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-address-card text-black"></i> Contact Info
+              </h3>
+              <a href="mailto:makhosijdlomo97@gmail.com" class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2 mb-2 hover:text-pink dark:hover:text-black transition-colors">
+                <i class="fa-solid fa-envelope text-black"></i> makhosijdlomo97@gmail.com
               </a>
-              <p class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2">
-                <i class="fa-solid fa-location-dot text-darkpurple"></i> South Africa
+              <p class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2 mb-2">
+                <i class="fa-solid fa-location-dot text-black"></i> South Africa
               </p>
             </div>
 
             <!-- Social Links -->
             <div class="flex justify-center gap-4">
               <!-- CV Download -->
-              <a href="cv.pdf" download class="px-3 py-1 bg-darkblue text-white font-semibold rounded hover:bg-darkpurple transition-colors duration-300 text-sm">Download CV</a>
-
+              <a href="cv.pdf" download class="px-4 py-2 bg-gradient-to-r from-black to-darkpurple text-white font-semibold rounded-full hover:from-darkpurple hover:to-pink transition-all duration-300 text-sm flex items-center gap-2 shadow-md transform hover:scale-105">
+                <i class="fa-solid fa-download"></i> Download CV
+              </a>
               <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" 
                  class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-pink transition-colors">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
               <a href="https://github.com/KhosieDlomo" 
-                 class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
+                 class="h-10 w-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
                 <i class="fa-brands fa-github"></i>
               </a>
             </div>
@@ -168,7 +175,7 @@
         <!-- Content Container -->
         <div class="w-full lg:w-2/3 order-2 lg:order-2 text-black dark:text-white">
           <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Welcome to My Portfolio</h1>
-          <div class="backdrop-blur-lg bg-beige/40 dark:bg-black/40 rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30 mb-8">
+          <div class="backdrop-blur-lg dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkblue rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30 mb-8">
             <h2 class="text-2xl font-bold mb-4 text-darkpurple dark:text-pink">Hello, I'm <span class="text-black dark:text-white">Makhosazana Jennifer Dlomo</span></h2>
             <p class="mb-4 text-gray-800 dark:text-gray-200">
               A passionate Software Engineering student from South Africa specializing in Backend Development. 
@@ -182,16 +189,16 @@
 
           <!-- Action Buttons -->
           <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <a class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-colors duration-300 flex items-center gap-2" href="about.html">
+             <a class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md" href="about.html">
               <i class="fa-solid fa-user"></i> More About Me
             </a>
-            <a href="contact.html" class="bg-darkpurple text-white font-semibold rounded-full px-6 py-3 hover:bg-pink transition-colors duration-300 flex items-center gap-2">
+            <a href="contact.html" class="bg-gradient-to-r from-darkpurple to-darkblue text-white font-semibold rounded-full px-6 py-3 hover:from-darkblue hover:to-darkpurple transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md">
               <i class="fa-solid fa-briefcase"></i> Hire Me
             </a>
-            <a href="project.html" class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-colors duration-300 flex items-center gap-2">
+            <a href="project.html" class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md">
               <i class="fa-solid fa-code"></i> My Work
             </a>
-            <a href="mailto:makhosijdlomo97@gmail.com" class="bg-darkpurple text-white font-semibold rounded-full px-6 py-3 hover:bg-pink transition-colors duration-300 flex items-center gap-2" title="Email Me">
+            <a href="mailto:makhosijdlomo97@gmail.com" class="bg-gradient-to-r from-darkblue to-darkpurple text-white font-semibold rounded-full px-6 py-3 hover:from-darkpurple hover:to-darkblue transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md" title="Email Me">
               <i class="fa-solid fa-envelope"></i> Reach Me
             </a>
           </div>
