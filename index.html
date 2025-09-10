@@ -51,10 +51,10 @@
 <body class="min-h-screen flex flex-col font-poppins bg-peach text-black dark:bg-black dark:text-white transition-colors duration-300">
 
   <!-- Navbar -->
-  <nav class="flex justify-between items-center bg-beige/80 dark:bg-black p-4 w-full fixed top-0 z-50 shadow-md backdrop-blur-sm">
+  <nav id="navbar" class="flex justify-between items-center bg-porcelain/80 dark:bg-black p-4 w-full fixed top-0 z-50 shadow-md backdrop-blur-sm transition-all duration-300">
     <!-- Brand -->
     <div class="flex items-center gap-2">
-      <a class="font-bold text-lg uppercase no-underline text-black dark:text-white tracking-widest" href="index.html">MJR Dlomo</a>
+      <a class="font-bold text-lg uppercase no-underline text-gray-800 dark:text-white tracking-widest" href="index.html">MJR Dlomo</a>
     </div>
 
     <!-- Links -->
@@ -237,6 +237,8 @@
     themeToggle.addEventListener('click', () => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      // Update navbar when theme changes
+      updateNavbarBackground();
     });
 
     // Mobile menu toggle
@@ -251,8 +253,66 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
+
+    // Navbar scroll effect for dark mode
+    const navbar = document.getElementById('navbar');
+    
+    function updateNavbarBackground() {
+      const isDarkMode = html.classList.contains('dark');
+      const isScrolled = window.scrollY > 50;
+      
+      if (isDarkMode && isScrolled) {
+        navbar.classList.remove('dark:bg-black');
+        navbar.classList.add('dark:bg-transparent');
+        navbar.classList.remove('shadow-md');
+      } else if (isDarkMode) {
+        navbar.classList.add('dark:bg-black');
+        navbar.classList.remove('dark:bg-transparent');
+        navbar.classList.add('shadow-md');
+      } else {
+        // Light mode behavior (no change)
+        navbar.classList.remove('dark:bg-transparent');
+      }
+    }
+
+    // Initial call
+    updateNavbarBackground();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', updateNavbarBackground);
   </script>
 
+  <!-- Styles -->
+  <style>
+    .nav-link {
+      @apply text-gray-800 dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
+    }
+    
+    /* Add a subtle purple glow effect in dark mode */
+    .dark .backdrop-blur-lg {
+      box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
+    }
+
+    /* Custom scrollbar for light mode */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fbfbf9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #812b49;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #631c38;
+    }
+
+    /* Profile image initials styling */
+    .initials {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+  </style>
   <!-- Styles -->
   <style>
     .nav-link {
