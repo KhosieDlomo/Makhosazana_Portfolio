@@ -120,9 +120,14 @@
               <span class="initials font-bold text-4xl">MJD</span>
             </div>
 
-      <div class="flex flex-col items-center mb-8">
-        <img src="images/profile.jpg" alt="Profile photo" class="w-32 h-32 object-cover rounded-full mb-4 bg-gray-200 dark:bg-gray-700">
-        <p class="text-base text-gray-700 dark:text-gray-300">
+             <!-- Profile image (overlays the gradient) -->
+            <img src="images/profile.jpg" 
+                 alt="Profile photo of Makhosazana Dlomo" 
+                 class="absolute inset-0 w-48 h-48 object-cover rounded-full shadow-lg border-4 border-porcelain dark:border-white opacity-100 transition-opacity duration-500"
+                 onerror="this.style.opacity='0'"
+                 loading="lazy">
+          </div>
+          <p class="text-base text-gray-700 dark:text-gray-300 text-center">
           I am a Software Engineering student at WeThinkCode, focusing on building a strong foundation in Python programming. 
           I have a solid understanding of Mathematics and Statistics, complemented by certifications, including 
           <strong>Technical Support (NQF Level 4)</strong> and <strong>System Development (NQF Level 5)</strong>. 
@@ -130,22 +135,23 @@
         </p>
       </div>
 
-      <div class="about-content bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 text-left">
-        <h3 class="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">Objective</h3>
-        <p class="mb-4 text-gray-700 dark:text-gray-300">
-          I am currently pursuing a career as an entry-level developer in the IT industry while studying Software Engineering. 
-          My goal is to secure a position that allows me to continue learning, apply my existing skills and knowledge, 
-          and gain hands-on experience in a dynamic environment. I am committed to delivering high-quality work, being professional, 
-          dependable, and honest. I thrive on opportunities to acquire new skills, achieve diverse objectives, 
-          and contribute expert services in a stimulating and growth-oriented workplace.
-        </p>
-        <ul class="space-y-2">
-          <li><strong>Fullname:</strong> <span class="ml-2">Makhosazana Jennifer Rose Dlomo</span></li>
-          <li><strong>Date of Birth:</strong> <span class="ml-2">August 20, 1997</span></li>
-          <li><strong>Occupation:</strong> <span class="ml-2">Student</span></li>
-          <li><strong>Email:</strong> <span class="ml-2">makhosijdlomo97@gmail.com</span></li>
-          <li><strong>Phone:</strong> <span class="ml-2">+27 79 575 5795</span></li>
-        </ul>
+      <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+          <h3 class="text-2xl font-bold mb-4 text-darkpurple dark:text-pink">Objective</h3>
+          <p class="mb-4 text-gray-700 dark:text-gray-300">
+            I am currently pursuing a career as an entry-level developer in the IT industry while studying Software Engineering. 
+            My goal is to secure a position that allows me to continue learning, apply my existing skills and knowledge, 
+            and gain hands-on experience in a dynamic environment. I am committed to delivering high-quality work, being professional, 
+            dependable, and honest. I thrive on opportunities to acquire new skills, achieve diverse objectives, 
+            and contribute expert services in a stimulating and growth-oriented workplace.
+          </p>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong class="text-darkpurple dark:text-pink">Fullname:</strong> <span class="ml-2">Makhosazana Jennifer Rose Dlomo</span></li>
+            <li><strong class="text-darkpurple dark:text-pink">Date of Birth:</strong> <span class="ml-2">August 20, 1997</span></li>
+            <li><strong class="text-darkpurple dark:text-pink">Occupation:</strong> <span class="ml-2">Student</span></li>
+            <li><strong class="text-darkpurple dark:text-pink">Email:</strong> <span class="ml-2">makhosijdlomo97@gmail.com</span></li>
+            <li><strong class="text-darkpurple dark:text-pink">Phone:</strong> <span class="ml-2">+27 79 575 5795</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
