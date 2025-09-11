@@ -146,15 +146,38 @@
         </div>
 
       <!-- Contact Form -->
-      <form name="contactForm" id="contactForm" method="post" action="" class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-8 w-full max-w-xl mx-auto">
-        <fieldset class="flex flex-col gap-4">
-          <input name="contactName" type="text" id="contactName" placeholder="Your Name" required class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600" />
-          <input name="ContactEmail" type="email" id="ContactEmail" placeholder="Your Email" required class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600" />
-          <input name="ContactSubject" type="text" id="ContactSubject" placeholder="Subject" class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600" />
-          <textarea name="ContactMessage" id="ContactMessage" cols="30" rows="5" placeholder="Message" required class="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
-          <button type="submit" class="bg-blue-600 text-white font-semibold rounded px-8 py-3 hover:bg-blue-700 transition-colors duration-300">Send Message</button>
-        </fieldset>
-      </form>
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+          <h3 class="text-2xl font-bold mb-6 text-darkpurple dark:text-pink text-center">Send Me a Message</h3>
+          
+          <form name="contactForm" id="contactForm" method="post" action="" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <input name="contactName" type="text" id="contactName" placeholder="Your Name" required 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
+              </div>
+              <div>
+                <input name="ContactEmail" type="email" id="ContactEmail" placeholder="Your Email" required 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
+              </div>
+            </div>
+            
+            <div>
+              <input name="ContactSubject" type="text" id="ContactSubject" placeholder="Subject" 
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
+            </div>
+            
+            <div>
+              <textarea name="ContactMessage" id="ContactMessage" cols="30" rows="5" placeholder="Your Message" required 
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300"></textarea>
+            </div>
+            
+            <button type="submit" 
+              class="w-full bg-gradient-to-r from-darkpurple to-pink text-white font-semibold rounded-lg px-8 py-3 hover:from-pink hover:to-darkpurple transition-all duration-300 transform hover:scale-105">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
