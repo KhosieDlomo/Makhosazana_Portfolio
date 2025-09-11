@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta -->
-  <title>Makhosazana J.R. Dlomo | Software Engineer Portfolio</title>
-  <meta name="description" content="Portfolio of Makhosazana Jennifer Rose Dlomo - Software Engineering student and developer.">
+  <title>Makhosazana J.R. Dlomo | About Me</title>
+  <meta name="description" content="Learn more about Makhosazana Jennifer Rose Dlomo - Software Engineering student and developer.">
 
-  <!--Fonts and Icons-->
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -52,7 +52,7 @@
 <body class="min-h-screen flex flex-col font-poppins bg-snow text-gray-800 dark:bg-black dark:text-white transition-colors duration-300">
 
   <!-- Navbar -->
-   <nav id="navbar" class="flex justify-between items-center bg-porcelain/80 dark:bg-black p-4 w-full fixed top-0 z-50 shadow-md backdrop-blur-sm transition-all duration-300">
+  <nav id="navbar" class="flex justify-between items-center bg-porcelain/80 dark:bg-black p-4 w-full fixed top-0 z-50 shadow-md backdrop-blur-sm transition-all duration-300">
     <!-- Brand -->
     <div class="flex items-center gap-2">
       <a class="font-bold text-lg uppercase no-underline text-gray-800 dark:text-white tracking-widest" href="index.html">MJR Dlomo</a>
@@ -68,11 +68,11 @@
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
 
-    <!-- Right: Social + Theme Toggle + Resume-->
-     <div class="flex items-center gap-3">
-
+    <!-- Right: Socials + Theme Toggle + CV -->
+    <div class="flex items-center gap-3">
+    
       <!-- Social Icons -->
-       <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
+      <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
         <i class="fa-brands fa-linkedin-in"></i>
       </a>
       <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
@@ -80,20 +80,18 @@
       </a>
 
       <!-- Theme Toggle -->
-         <button id="theme-toggle" class="h-10 w-10 bg-darkblue dark:bg-darkblue rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-darkpurple dark:hover:bg-darkpurple" aria-label="Toggle dark mode">
+      <button id="theme-toggle" class="h-10 w-10 bg-darkblue dark:bg-darkblue rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-darkpurple dark:hover:bg-darkpurple" aria-label="Toggle dark mode">
         <i class="fa fa-moon text-white dark:hidden"></i>
         <i class="fa fa-sun text-white hidden dark:block"></i>
       </button>
 
-      <!-- Mobile Menu Butoon -->
-       <button class="md:hidden menu-btn text-gray-800 dark:text-white text-2xl ml-2">
-        <i class="fa fa-bars"></i>
-      </button>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden menu-btn text-gray-800 dark:text-white text-2xl ml-2"><i class="fa fa-bars"></i></button>
     </div>
   </nav>
 
-  <!-- Mobile Menu(Hidden by default)-->
-   <div class="mobile-menu hidden bg-porcelain/90 dark:bg-black w-full fixed top-16 left-0 z-40 shadow-md md:hidden flex flex-col items-center py-4 backdrop-blur-sm">
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu hidden bg-porcelain/90 dark:bg-black w-full fixed top-16 left-0 z-40 shadow-md md:hidden flex flex-col items-center py-4 backdrop-blur-sm">
     <ul class="flex flex-col gap-4 text-center">
       <li><a href="index.html" class="nav-link">Home</a></li>
       <li><a href="about.html" class="nav-link">About</a></li>
@@ -102,25 +100,25 @@
       <li><a href="project.html" class="nav-link">Projects</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
-   </div> 
-   
-   <!-- About Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center relative pt-24 bg-gradient-to-br from-snow to-cotton dark:from-black dark:to-darkbg animate-fadeIn">
-    <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+  </div>
 
+  <!-- About Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center relative pt-24 bg-gradient-to-br from-snow to-cotton dark:from-black dark:to-darkbg animate-fadeIn">
+    <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+    
     <div class="container mx-auto px-4 py-12 relative z-10">
       <div class="max-w-3xl mx-auto">
         <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink text-center">About</h4>
         <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">Let me introduce myself.</h1>
-
+        
         <div class="flex flex-col items-center mb-8">
           <div class="relative w-48 h-48 mb-6">
             <!-- Gradient background (shown when image is missing or loading) -->
             <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black shadow-lg border-4 border-porcelain dark:border-white flex items-center justify-center text-white text-5xl animate-float">
               <span class="initials font-bold text-4xl">MJD</span>
             </div>
-
-             <!-- Profile image (overlays the gradient) -->
+            
+            <!-- Profile image (overlays the gradient) -->
             <img src="images/profile.jpg" 
                  alt="Profile photo of Makhosazana Dlomo" 
                  class="absolute inset-0 w-48 h-48 object-cover rounded-full shadow-lg border-4 border-porcelain dark:border-white opacity-100 transition-opacity duration-500"
@@ -128,14 +126,14 @@
                  loading="lazy">
           </div>
           <p class="text-base text-gray-700 dark:text-gray-300 text-center">
-          I am a Software Engineering student at WeThinkCode, focusing on building a strong foundation in Python programming. 
-          I have a solid understanding of Mathematics and Statistics, complemented by certifications, including 
-          <strong>Technical Support (NQF Level 4)</strong> and <strong>System Development (NQF Level 5)</strong>. 
-          These qualifications, combined with my ongoing studies, have equipped me with technical skills and a problem-solving mindset essential for the IT industry.
-        </p>
-      </div>
+            I am a Software Engineering student at WeThinkCode, focusing on building a strong foundation in Python programming. 
+            I have a solid understanding of Mathematics and Statistics, complemented by certifications, including 
+            <strong class="text-darkpurple dark:text-pink">Technical Support (NQF Level 4)</strong> and <strong class="text-darkpurple dark:text-pink">System Development (NQF Level 5)</strong>. 
+            These qualifications, combined with my ongoing studies, have equipped me with technical skills and a problem-solving mindset essential for the IT industry.
+          </p>
+        </div>
 
-      <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
           <h3 class="text-2xl font-bold mb-4 text-darkpurple dark:text-pink">Objective</h3>
           <p class="mb-4 text-gray-700 dark:text-gray-300">
             I am currently pursuing a career as an entry-level developer in the IT industry while studying Software Engineering. 
@@ -156,7 +154,7 @@
     </div>
   </section>
 
- <!-- Footer -->
+  <!-- Footer -->
   <footer class="mt-auto bg-porcelain dark:bg-black py-8 text-gray-800 dark:text-white border-t border-cotton dark:border-gray-800">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="flex gap-6 mb-4 md:mb-0">
@@ -172,6 +170,64 @@
       </a>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Dark/Light mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    } else { html.classList.remove('dark'); }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      // Update navbar when theme changes
+      updateNavbarBackground();
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Smooth scroll to top
+    document.querySelectorAll('.back-to-top').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Navbar scroll effect for dark mode
+    const navbar = document.getElementById('navbar');
+    
+    function updateNavbarBackground() {
+      const isDarkMode = html.classList.contains('dark');
+      const isScrolled = window.scrollY > 50;
+      
+      if (isDarkMode && isScrolled) {
+        navbar.classList.remove('dark:bg-black');
+        navbar.classList.add('dark:bg-transparent');
+        navbar.classList.remove('shadow-md');
+      } else if (isDarkMode) {
+        navbar.classList.add('dark:bg-black');
+        navbar.classList.remove('dark:bg-transparent');
+        navbar.classList.add('shadow-md');
+      } else {
+        // Light mode behavior (no change)
+        navbar.classList.remove('dark:bg-transparent');
+      }
+    }
+
+    // Initial call
+    updateNavbarBackground();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', updateNavbarBackground);
+  </script>
 
   <!-- Styles -->
   <style>
