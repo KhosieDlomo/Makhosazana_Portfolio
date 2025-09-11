@@ -198,57 +198,93 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+   <!-- Scripts -->
   <script>
     // Dark/Light mode toggle
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-
     if (localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
+    } else { html.classList.remove('dark'); }
 
     themeToggle.addEventListener('click', () => {
       html.classList.toggle('dark');
-      if (html.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      // Update navbar when theme changes
+      updateNavbarBackground();
     });
 
-    // Mobile Menu Toggle
+    // Mobile menu toggle
     const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('nav ul');
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('hidden');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Smooth scroll to top
+    document.querySelectorAll('.back-to-top').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
 
-    // Smooth Scroll to Top
-    document.querySelector('.back-to-top').addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // Navbar scroll effect for dark mode
+    const navbar = document.getElementById('navbar');
+    
+    function updateNavbarBackground() {
+      const isDarkMode = html.classList.contains('dark');
+      const isScrolled = window.scrollY > 50;
+      
+      if (isDarkMode && isScrolled) {
+        navbar.classList.remove('dark:bg-black');
+        navbar.classList.add('dark:bg-transparent');
+        navbar.classList.remove('shadow-md');
+      } else if (isDarkMode) {
+        navbar.classList.add('dark:bg-black');
+        navbar.classList.remove('dark:bg-transparent');
+        navbar.classList.add('shadow-md');
+      } else {
+        // Light mode behavior (no change)
+        navbar.classList.remove('dark:bg-transparent');
+      }
+    }
+
+    // Initial call
+    updateNavbarBackground();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', updateNavbarBackground);
   </script>
 
+  <!-- Styles -->
   <style>
     .nav-link {
-      color: #111;
-      font-weight: 500;
-      padding: 0.25rem 0.5rem;
-      transition: color 0.3s;
+      @apply text-gray-800 dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
     }
-    .dark .nav-link {
-      color: #f2f2f2;
+    
+    /* Add a subtle purple glow effect in dark mode */
+    .dark .backdrop-blur-lg {
+      box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
     }
-    .nav-link:hover {
-      color: #2563eb;
+
+    /* Custom scrollbar for light mode */
+    ::-webkit-scrollbar {
+      width: 8px;
     }
-    .dark .nav-link:hover {
-      color: #60a5fa;
+    ::-webkit-scrollbar-track {
+      background: #fbfbf9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #812b49;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #631c38;
+    }
+
+    /* Profile image initials styling */
+    .initials {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
   </style>
 </body>
