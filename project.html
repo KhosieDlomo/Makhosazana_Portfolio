@@ -50,7 +50,7 @@
 </head>
 
 <body class="min-h-screen flex flex-col font-poppins bg-snow text-gray-800 dark:bg-black dark:text-white transition-colors duration-300">
-  
+
   <!-- Navbar -->
   <nav id="navbar" class="flex justify-between items-center bg-porcelain/80 dark:bg-black p-4 w-full fixed top-0 z-50 shadow-md backdrop-blur-sm transition-all duration-300">
     <!-- Brand -->
@@ -58,17 +58,17 @@
       <a class="font-bold text-lg uppercase no-underline text-gray-800 dark:text-white tracking-widest" href="index.html">MJR Dlomo</a>
     </div>
 
-     <!-- Links -->
+    <!-- Links -->
     <ul class="flex gap-6 hidden md:flex">
       <li><a href="index.html" class="nav-link">Home</a></li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="skills.html" class="nav-link">Skills</a></li>
       <li><a href="resume.html" class="nav-link">Resume</a></li>
-      <li><a href="project.html" class="nav-link active">Projects</a></li>
+      <li><a href="project.html" class="nav-link">Projects</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
 
-     <!-- Right: Socials + Theme Toggle + CV -->
+    <!-- Right: Socials + Theme Toggle + CV -->
     <div class="flex items-center gap-3">
     
       <!-- Social Icons -->
@@ -79,7 +79,7 @@
         <i class="fa-brands fa-github"></i>
       </a>
 
-       <!-- Theme Toggle -->
+      <!-- Theme Toggle -->
       <button id="theme-toggle" class="h-10 w-10 bg-darkblue dark:bg-darkblue rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-darkpurple dark:hover:bg-darkpurple" aria-label="Toggle dark mode">
         <i class="fa fa-moon text-white dark:hidden"></i>
         <i class="fa fa-sun text-white hidden dark:block"></i>
@@ -97,117 +97,119 @@
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="skills.html" class="nav-link">Skills</a></li>
       <li><a href="resume.html" class="nav-link">Resume</a></li>
-      <li><a href="project.html" class="nav-link active">Projects</a></li>
+      <li><a href="project.html" class="nav-link">Projects</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
   </div>
 
-   <!-- Projects Section -->
+  <!-- Projects Section -->
   <section class="min-h-screen flex flex-col justify-center items-center relative pt-24 bg-gradient-to-br from-snow to-cotton dark:from-black dark:to-darkbg animate-fadeIn">
     <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
     
     <div class="container mx-auto px-4 py-12 relative z-10">
-      <div class="max-w-6xl mx-auto text-center">
+      <div class="max-w-5xl mx-auto text-center">
         <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink">Portfolio</h4>
         <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">My Projects</h1>
-        <p class="mb-8 text-gray-700 dark:text-gray-300">Here are some of the projects I've worked on that showcase my skills and experience.</p>
-
-         <!-- Project Filters -->
-        <div class="flex flex-wrap justify-center gap-2 mb-12">
-          <button class="filter-btn active px-4 py-2 rounded-full bg-darkpurple text-white dark:bg-pink dark:text-gray-900 transition-all" data-filter="all">All Projects</button>
-          <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-darkpurple hover:text-white dark:hover:bg-pink dark:hover:text-gray-900 transition-all" data-filter="web">Web Development</button>
-          <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-darkpurple hover:text-white dark:hover:bg-pink dark:hover:text-gray-900 transition-all" data-filter="software">Software Engineering</button>
-          <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-darkpurple hover:text-white dark:hover:bg-pink dark:hover:text-gray-900 transition-all" data-filter="academic">Academic</button>
-        </div>
+        <p class="mb-12 text-gray-700 dark:text-gray-300">Here are some of the projects I've worked on that showcase my skills and passion for development.</p>
 
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Project 1 -->
-          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="web">
-            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
-              <i class="fa-solid fa-laptop-code text-white text-5xl"></i>
-              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
-                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
-              </div>
+          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+              <i class="fa-solid fa-code text-4xl text-darkpurple dark:text-pink"></i>
             </div>
-            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">E-Commerce Website</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">A full-stack e-commerce platform with user authentication, product management, and payment processing.</p>
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">React</span>
-              <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Node.js</span>
-              <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">MongoDB</span>
-            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Project 1</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">Short description of project 1 showcasing your skills and technologies used.</p>
+            <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+              View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
 
           <!-- Project 2 -->
-          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="software">
-            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
-              <i class="fa-solid fa-mobile-screen-button text-white text-5xl"></i>
-              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
-                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
-              </div>
+          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+              <i class="fa-solid fa-laptop-code text-4xl text-darkpurple dark:text-pink"></i>
             </div>
-            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Task Management App</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">A cross-platform task management application with real-time synchronization and collaborative features.</p>
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Flutter</span>
-              <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Firebase</span>
-              <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Dart</span>
-            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Project 2</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">Short description of project 2 showcasing your skills and technologies used.</p>
+            <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+              View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
 
           <!-- Project 3 -->
-          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="academic">
-            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
-              <i class="fa-solid fa-chart-line text-white text-5xl"></i>
-              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
-                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
-              </div>
+          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+              <i class="fa-solid fa-database text-4xl text-darkpurple dark:text-pink"></i>
             </div>
-            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Data Analysis Tool</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">A Python-based data analysis tool for processing and visualizing complex datasets with machine learning capabilities.</p>
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Python</span>
-              <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Pandas</span>
-              <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Matplotlib</span>
-            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Project 3</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">Short description of project 3 showcasing your skills and technologies used.</p>
+            <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+              View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
 
           <!-- Project 4 -->
-          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="web">
-            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-yellow-400 to-red-500 flex items-center justify-center">
-              <i class="fa-solid fa-blog text-white text-5xl"></i>
-              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
-                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
-              </div>
+          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+              <i class="fa-brands fa-python text-4xl text-darkpurple dark:text-pink"></i>
             </div>
-            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Blog Platform</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">A responsive blog platform with rich text editing, comment system, and admin dashboard.</p>
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded">JavaScript</span>
-              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded">Express</span>
-              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded">MySQL</span>
-            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Python Project</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">A Python-based application demonstrating backend development skills.</p>
+            <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+              View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
           </div>
+
+          <!-- Project 5 -->
+          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+              <i class="fa-solid fa-mobile-alt text-4xl text-darkpurple dark:text-pink"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Responsive Design</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">A responsive web application with modern UI/UX principles.</p>
+            <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+              View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+              <i class="fa-solid fa-server text-4xl text-darkpurple dark:text-pink"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Backend System</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">A robust backend system with API integration and database management.</p>
+            <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+              View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-16 text-center">
+          <p class="text-gray-700 dark:text-gray-300 mb-6">Interested in seeing more of my work or discussing a project?</p>
+          <a href="contact.html" class="bg-gradient-to-r from-darkpurple to-pink text-white font-semibold rounded-full px-8 py-3 hover:from-pink hover:to-darkpurple transition-all duration-300 inline-flex items-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Get In Touch
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="mt-auto bg-[#111] dark:bg-gray-800 py-8 text-white">
+  <footer class="mt-auto bg-porcelain dark:bg-black py-8 text-gray-800 dark:text-white border-t border-cotton dark:border-gray-800">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="flex gap-6 mb-4 md:mb-0">
-        <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-white text-xl hover:text-blue-400 transition-colors duration-300"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-white text-xl hover:text-gray-400 transition-colors duration-300"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-darkpurple dark:text-white text-xl hover:text-pink transition-colors duration-300 transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-darkpurple dark:text-white text-xl hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 transform hover:scale-110"><i class="fa-brands fa-github"></i></a>
       </div>
-      <div class="text-sm text-center md:text-left mb-4 md:mb-0">
+      <div class="text-sm text-center md:text-left mb-4 md:mb-0 text-gray-600 dark:text-gray-300">
         <span>© Copyright MaDlomo 2025.</span> 
         <span>Design by MJR Dlomo</span>
       </div>
-      <a class="text-white hover:text-blue-400 transition-colors duration-300 back-to-top" title="Back to Top" href="#">
+      <a class="text-darkpurple dark:text-white hover:text-pink transition-colors duration-300 back-to-top transform hover:scale-110" title="Back to Top" href="#">
         <i class="fa-solid fa-arrow-up-long text-xl"></i>
       </a>
     </div>
@@ -218,52 +220,88 @@
     // Dark/Light mode toggle
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-
     if (localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
+    } else { html.classList.remove('dark'); }
 
     themeToggle.addEventListener('click', () => {
       html.classList.toggle('dark');
-      if (html.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      // Update navbar when theme changes
+      updateNavbarBackground();
     });
 
-    // Mobile Menu Toggle
+    // Mobile menu toggle
     const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('nav ul');
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('hidden');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Smooth scroll to top
+    document.querySelectorAll('.back-to-top').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
 
-    // Smooth Scroll to Top
-    document.querySelector('.back-to-top').addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // Navbar scroll effect for dark mode
+    const navbar = document.getElementById('navbar');
+    
+    function updateNavbarBackground() {
+      const isDarkMode = html.classList.contains('dark');
+      const isScrolled = window.scrollY > 50;
+      
+      if (isDarkMode && isScrolled) {
+        navbar.classList.remove('dark:bg-black');
+        navbar.classList.add('dark:bg-transparent');
+        navbar.classList.remove('shadow-md');
+      } else if (isDarkMode) {
+        navbar.classList.add('dark:bg-black');
+        navbar.classList.remove('dark:bg-transparent');
+        navbar.classList.add('shadow-md');
+      } else {
+        // Light mode behavior (no change)
+        navbar.classList.remove('dark:bg-transparent');
+      }
+    }
+
+    // Initial call
+    updateNavbarBackground();
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', updateNavbarBackground);
   </script>
 
+  <!-- Styles -->
   <style>
     .nav-link {
-      color: #111;
-      font-weight: 500;
-      padding: 0.25rem 0.5rem;
-      transition: color 0.3s;
+      @apply text-gray-800 dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
     }
-    .dark .nav-link {
-      color: #f2f2f2;
+    
+    /* Add a subtle purple glow effect in dark mode */
+    .dark .backdrop-blur-lg {
+      box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
     }
-    .nav-link:hover {
-      color: #2563eb;
+
+    /* Custom scrollbar for light mode */
+    ::-webkit-scrollbar {
+      width: 8px;
     }
-    .dark .nav-link:hover {
-      color: #60a5fa;
+    ::-webkit-scrollbar-track {
+      background: #fbfbf9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #812b49;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #631c38;
+    }
+
+    /* Profile image initials styling */
+    .initials {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
   </style>
 </body>
