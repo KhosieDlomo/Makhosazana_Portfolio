@@ -119,31 +119,80 @@
           <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-darkpurple hover:text-white dark:hover:bg-pink dark:hover:text-gray-900 transition-all" data-filter="software">Software Engineering</button>
           <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-darkpurple hover:text-white dark:hover:bg-pink dark:hover:text-gray-900 transition-all" data-filter="academic">Academic</button>
         </div>
-        
-      <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Example Project -->
-        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
-          <img src="#" alt="Project 1" class="w-full h-48 object-cover rounded mb-4 bg-gray-200 dark:bg-gray-700">
-          <h3 class="text-xl font-bold mb-2">Project 1</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Short description of project 1.</p>
-          <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">View Project</a>
-        </div>
 
-        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
-          <img src="#" alt="Project 2" class="w-full h-48 object-cover rounded mb-4 bg-gray-200 dark:bg-gray-700">
-          <h3 class="text-xl font-bold mb-2">Project 2</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Short description of project 2.</p>
-          <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">View Project</a>
-        </div>
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="web">
+            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+              <i class="fa-solid fa-laptop-code text-white text-5xl"></i>
+              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
+                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">E-Commerce Website</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">A full-stack e-commerce platform with user authentication, product management, and payment processing.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">React</span>
+              <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Node.js</span>
+              <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">MongoDB</span>
+            </div>
+          </div>
 
-        <div class="bg-white/80 dark:bg-gray-800/80 rounded-lg shadow p-6 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
-          <img src="#" alt="Project 3" class="w-full h-48 object-cover rounded mb-4 bg-gray-200 dark:bg-gray-700">
-          <h3 class="text-xl font-bold mb-2">Project 3</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">Short description of project 3.</p>
-          <a href="#" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">View Project</a>
-        </div>
-      </div>
+          <!-- Project 2 -->
+          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="software">
+            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+              <i class="fa-solid fa-mobile-screen-button text-white text-5xl"></i>
+              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
+                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Task Management App</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">A cross-platform task management application with real-time synchronization and collaborative features.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Flutter</span>
+              <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Firebase</span>
+              <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Dart</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="academic">
+            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
+              <i class="fa-solid fa-chart-line text-white text-5xl"></i>
+              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
+                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Data Analysis Tool</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">A Python-based data analysis tool for processing and visualizing complex datasets with machine learning capabilities.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Python</span>
+              <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Pandas</span>
+              <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Matplotlib</span>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="web">
+            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-gradient-to-r from-yellow-400 to-red-500 flex items-center justify-center">
+              <i class="fa-solid fa-blog text-white text-5xl"></i>
+              <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <a href="#" class="text-white text-xl bg-darkpurple p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink"><i class="fa-solid fa-link"></i></a>
+                <a href="#" class="text-white text-xl bg-gray-800 p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-900"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Blog Platform</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">A responsive blog platform with rich text editing, comment system, and admin dashboard.</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded">JavaScript</span>
+              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded">Express</span>
+              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs px-2 py-1 rounded">MySQL</span>
+            </div>
+          </div>
     </div>
   </section>
 
