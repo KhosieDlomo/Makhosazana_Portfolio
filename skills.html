@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta -->
-  <title>Makhosazana J.R Dlomo | Resume</title>
-  <meta name="description" content="Resume of Makhosazana Jennifer Rose Dlomo - Software Engineering student and developer.">
+  <title>Makhosazana J.R Dlomo | Skills</title>
+  <meta name="description" content="Skills of Makhosazana Jennifer Rose Dlomo - Software Engineering student and developer.">
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
- <!-- Tailwind CSS -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,7 +25,7 @@
             snow: '#F5FEFD',
             porcelain: '#fffefc',
             cotton: '#fbfbf9',
-            darkbg: '#0a0809' // Almost black with subtle purple undertone
+            darkbg: '#0a0809'
           },
           keyframes: {
             fadeIn: {
@@ -47,6 +45,310 @@
       }
     }
   </script>
+  <style>
+    .nav-link {
+      @apply text-gray-800 dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
+    }
+    
+    .dark .backdrop-blur-lg {
+      box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fbfbf9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #812b49;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #631c38;
+    }
+
+    .initials {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .skill-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    
+    .skill-icon:hover {
+      transform: translateY(-5px);
+    }
+    
+    .skill-tooltip {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #812b49;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+    
+    .dark .skill-tooltip {
+      background-color: #e25fac;
+      color: #0a0809;
+    }
+    
+    .skill-tooltip::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 0 5px 5px 5px;
+      border-style: solid;
+      border-color: transparent transparent #812b49 transparent;
+    }
+    
+    .dark .skill-tooltip::after {
+      border-color: transparent transparent #e25fac transparent;
+    }
+
+    /* 3D Carousel Styles */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      perspective: 1000px;
+      margin: 2rem auto;
+    }
+    
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: carousel-rotate 30s infinite linear;
+    }
+    
+    .carousel:hover {
+      animation-play-state: paused;
+    }
+    
+    .carousel-item {
+      position: absolute;
+      width: 300px;
+      height: 380px;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px;
+      margin-top: -190px;
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease, filter 0.5s ease;
+      transform-style: preserve-3d;
+      overflow: hidden;
+    }
+    
+    .carousel-item:hover {
+      transform: scale(1.05) translateZ(20px);
+      filter: brightness(1.1);
+    }
+    
+    .carousel-item-content {
+      padding: 1.5rem;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .carousel-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .carousel-item-icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      background: linear-gradient(to right, #812b49, #e25fac);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .carousel-item-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #812b49;
+    }
+    
+    .dark .carousel-item-title {
+      color: #e25fac;
+    }
+    
+    .carousel-skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    /* 3D Positioning */
+    .carousel-item:nth-child(1) {
+      transform: rotateY(0deg) translateZ(450px);
+      background: rgba(255, 254, 252, 0.8);
+      border: 1px solid rgba(255, 254, 252, 0.5);
+    }
+    
+    .dark .carousel-item:nth-child(1) {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(129, 43, 73, 0.2));
+      border: 1px solid rgba(129, 43, 73, 0.3);
+    }
+    
+    .carousel-item:nth-child(2) {
+      transform: rotateY(60deg) translateZ(450px);
+      background: rgba(255, 254, 252, 0.8);
+      border: 1px solid rgba(255, 254, 252, 0.5);
+    }
+    
+    .dark .carousel-item:nth-child(2) {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(129, 43, 73, 0.2));
+      border: 1px solid rgba(129, 43, 73, 0.3);
+    }
+    
+    .carousel-item:nth-child(3) {
+      transform: rotateY(120deg) translateZ(450px);
+      background: rgba(255, 254, 252, 0.8);
+      border: 1px solid rgba(255, 254, 252, 0.5);
+    }
+    
+    .dark .carousel-item:nth-child(3) {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(129, 43, 73, 0.2));
+      border: 1px solid rgba(129, 43, 73, 0.3);
+    }
+    
+    .carousel-item:nth-child(4) {
+      transform: rotateY(180deg) translateZ(450px);
+      background: rgba(255, 254, 252, 0.8);
+      border: 1px solid rgba(255, 254, 252, 0.5);
+    }
+    
+    .dark .carousel-item:nth-child(4) {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(129, 43, 73, 0.2));
+      border: 1px solid rgba(129, 43, 73, 0.3);
+    }
+    
+    .carousel-item:nth-child(5) {
+      transform: rotateY(240deg) translateZ(450px);
+      background: rgba(255, 254, 252, 0.8);
+      border: 1px solid rgba(255, 254, 252, 0.5);
+    }
+    
+    .dark .carousel-item:nth-child(5) {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(129, 43, 73, 0.2));
+      border: 1px solid rgba(129, 43, 73, 0.3);
+    }
+    
+    .carousel-item:nth-child(6) {
+      transform: rotateY(300deg) translateZ(450px);
+      background: rgba(255, 254, 252, 0.8);
+      border: 1px solid rgba(255, 254, 252, 0.5);
+    }
+    
+    .dark .carousel-item:nth-child(6) {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(129, 43, 73, 0.2));
+      border: 1px solid rgba(129, 43, 73, 0.3);
+    }
+    
+    /* Animation */
+    @keyframes carousel-rotate {
+      from {
+        transform: rotateY(0);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+    
+    /* Controls */
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .carousel-control {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(to right, #812b49, #e25fac);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .carousel-control:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-container {
+        height: 400px;
+        perspective: 600px;
+      }
+      
+      .carousel-item {
+        width: 250px;
+        height: 320px;
+        margin-left: -125px;
+        margin-top: -160px;
+      }
+      
+      .carousel-item:nth-child(1) {
+        transform: rotateY(0deg) translateZ(300px);
+      }
+      
+      .carousel-item:nth-child(2) {
+        transform: rotateY(60deg) translateZ(300px);
+      }
+      
+      .carousel-item:nth-child(3) {
+        transform: rotateY(120deg) translateZ(300px);
+      }
+      
+      .carousel-item:nth-child(4) {
+        transform: rotateY(180deg) translateZ(300px);
+      }
+      
+      .carousel-item:nth-child(5) {
+        transform: rotateY(240deg) translateZ(300px);
+      }
+      
+      .carousel-item:nth-child(6) {
+        transform: rotateY(300deg) translateZ(300px);
+      }
+    }
+  </style>
 </head>
 
 <body class="min-h-screen flex flex-col font-poppins bg-snow text-gray-800 dark:bg-black dark:text-white transition-colors duration-300">
@@ -112,183 +414,239 @@
         <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">My Skills</h1>
         <p class="mb-12 text-gray-700 dark:text-gray-300">A comprehensive overview of my technical and professional capabilities</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-       <!-- Programming Languages -->
-          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="h-10 w-10 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                <i class="fa-solid fa-code"></i>
-              </div>
-              <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Programming Languages</h3>
-            </div>
-            <div class="flex flex-wrap gap-4 mt-6">
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Python</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">C#</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">C++</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Java</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">HTML</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">CSS</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">JavaScript</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">TypeScript</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="src/SQL.svg" alt="SQL" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">SQL</span>
-              </div>
-            </div>
-          </div>
-
-      <!-- Web Development & Frameworks -->
-          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="h-10 w-10 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                <i class="fa-solid fa-laptop-code"></i>
-              </div>
-              <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Web Development & Frameworks</h3>
-            </div>
-            <div class="flex flex-wrap gap-4 mt-6">
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Flask</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="ASP.NET" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">ASP.NET</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET Framework" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">.NET Framework</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="src/api.svg" alt="RESTful APIs" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">RESTful APIs</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Docker</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Database Management -->
-          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-极xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="h-10 w-10 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                <i class="fa-solid fa-database"></i>
-              </div>
-              <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Database Management</h3>
-            </div>
-            <div class="flex flex-wrap gap-4 mt-6">
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Firebase</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">SQL Server</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">SQLite</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">MongoDB</span>
-              </div>
-            </div>
-          </div>
-
-      <!-- Networking -->
-          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="h-10 w-10 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                <i class="fa-solid fa-network-wired"></i>
-              </div>
-              <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Networking</h3>
-            </div>
-            <div class="flex flex-wrap gap-4 mt-6">
-              <div class="skill-icon relative group">
-                <img src="src/LAN.svg" alt="LAN/WAN" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">LAN/WAN Configuration</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="src/administration.svg" alt="Network Admin" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Network Administration</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="src/server.svg" alt="Server Admin" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Server Administration</span>
-              </div>
-              <div class="skill-icon relative group">
-                <img src="src/troubleshoot.svg" alt="Troubleshooting" class="w-12 h-12">
-                <span class="skill-tooltip group-hover:opacity-100">Network Troubleshooting</span>
-              </div>
-            </div>
-          </div>
-
-       <!-- Professional Skills -->
-          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="h-10 w-10 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                <i class="fa-solid fa-user-tie"></i>
-              </div>
-              <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Soft Skills</h3>
-            </div>
-            <div class="flex flex-wrap gap-4 mt-6">
-              <div class="skill-icon relative group">
-                <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                  <i class="fa-solid fa-lightbulb"></i>
+        <!-- 3D Carousel Container -->
+        <div class="carousel-container">
+          <div class="carousel">
+            <!-- Programming Languages -->
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-header">
+                  <div class="carousel-item-icon">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                  <h3 class="carousel-item-title">Programming Languages</h3>
                 </div>
-                <span class="skill-tooltip group-hover:opacity-100">Problem-Solving</span>
-              </div>
-              <div class="skill-icon relative group">
-                <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                  <i class="fa-solid fa-list-check"></i>
+                <div class="carousel-skills-grid">
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Python</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">C#</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">C++</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Java</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">HTML</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">CSS</span>
+                  </div>
                 </div>
-                <span class="skill-tooltip group-hover:opacity-100">Task Prioritization</span>
               </div>
-              <div class="skill-icon relative group">
-                <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                  <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <!-- Web Development & Frameworks -->
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-header">
+                  <div class="carousel-item-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                  </div>
+                  <h3 class="carousel-item-title">Web Development</h3>
                 </div>
-                <span class="skill-tooltip group-hover:opacity-100">Teamwork & Collaboration</span>
+                <div class="carousel-skills-grid">
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">JavaScript</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">TypeScript</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Flask</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="ASP.NET" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">ASP.NET</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Docker</span>
+                  </div>
+                </div>
               </div>
-              <div class="skill-icon relative group">
-                <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
-                  <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <!-- Database Management -->
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-header">
+                  <div class="carousel-item-icon">
+                    <i class="fa-solid fa-database"></i>
+                  </div>
+                  <h3 class="carousel-item-title">Database Management</h3>
                 </div>
-                <span class="skill-tooltip group-hover:opacity-100">Communication</span>
+                <div class="carousel-skills-grid">
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Firebase</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">SQL Server</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">SQLite</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">MongoDB</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">SQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Networking -->
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-header">
+                  <div class="carousel-item-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                  </div>
+                  <h3 class="carousel-item-title">Networking</h3>
+                </div>
+                <div class="carousel-skills-grid">
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">LAN/WAN Configuration</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-server"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">Network Administration</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">Server Administration</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-tools"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">Network Troubleshooting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-header">
+                  <div class="carousel-item-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                  </div>
+                  <h3 class="carousel-item-title">Soft Skills</h3>
+                </div>
+                <div class="carousel-skills-grid">
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">Problem-Solving</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">Task Prioritization</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">Teamwork & Collaboration</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <div class="w-12 h-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+                      <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <span class="skill-tooltip group-hover:opacity-100">Communication</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Skills -->
+            <div class="carousel-item">
+              <div class="carousel-item-content">
+                <div class="carousel-item-header">
+                  <div class="carousel-item-icon">
+                    <i class="fa-solid fa-gears"></i>
+                  </div>
+                  <h3 class="carousel-item-title">Additional Skills</h3>
+                </div>
+                <div class="carousel-skills-grid">
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Git</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Linux</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Bash Scripting</span>
+                  </div>
+                  <div class="skill-icon relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-12 h-12">
+                    <span class="skill-tooltip group-hover:opacity-100">Figma</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-      <a href="contact.html" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold rounded-full px-8 py-3 transition-colors duration-300">Hire Me</a>
+        <div class="carousel-controls">
+          <div class="carousel-control" onclick="slowRotation()">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <div class="carousel-control" onclick="pauseRotation()">
+            <i class="fas fa-pause"></i>
+          </div>
+          <div class="carousel-control" onclick="playRotation()">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+          <a href="contact.html" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold rounded-full px-8 py-3 transition-colors duration-300">Hire Me</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -309,7 +667,7 @@
     </div>
   </footer>
 
- <!-- Scripts -->
+  <!-- Scripts -->
   <script>
     // Dark/Light mode toggle
     const themeToggle = document.getElementById('theme-toggle');
@@ -322,7 +680,6 @@
     themeToggle.addEventListener('click', () => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-      // Update navbar when theme changes
       updateNavbarBackground();
     });
 
@@ -355,7 +712,6 @@
         navbar.classList.remove('dark:bg-transparent');
         navbar.classList.add('shadow-md');
       } else {
-        // Light mode behavior (no change)
         navbar.classList.remove('dark:bg-transparent');
       }
     }
@@ -365,85 +721,21 @@
     
     // Listen for scroll events
     window.addEventListener('scroll', updateNavbarBackground);
+
+    // Carousel control functions
+    const carousel = document.querySelector('.carousel');
+    
+    function pauseRotation() {
+      carousel.style.animationPlayState = 'paused';
+    }
+    
+    function playRotation() {
+      carousel.style.animationPlayState = 'running';
+    }
+    
+    function slowRotation() {
+      carousel.style.animationDuration = '60s';
+    }
   </script>
-
-  <!-- Styles -->
-  <style>
-    .nav-link {
-      @apply text-gray-800 dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
-    }
-    
-    /* Add a subtle purple glow effect in dark mode */
-    .dark .backdrop-blur-lg {
-      box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
-    }
-
-    /* Custom scrollbar for light mode */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #fbfbf9;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #812b49;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #631c38;
-    }
-
-    /* Profile image initials styling */
-    .initials {
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    /* Skill icon styling */
-    .skill-icon {
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-    
-    .skill-icon:hover {
-      transform: translateY(-5px);
-    }
-    
-    .skill-tooltip {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #812b49;
-      color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 12px;
-      white-space: nowrap;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      z-index: 10;
-    }
-    
-    .dark .skill-tooltip {
-      background-color: #e25fac;
-      color: #0a0809;
-    }
-    
-    .skill-tooltip::after {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 0 5px 5px 5px;
-      border-style: solid;
-      border-color: transparent transparent #812b49 transparent;
-    }
-    
-    .dark .skill-tooltip::after {
-      border-color: transparent transparent #e25fac transparent;
-    }
-  </style>
 </body>
 </html>
