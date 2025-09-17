@@ -405,10 +405,24 @@
     window.addEventListener('scroll', updateNavbarBackground);
 
     const carousel = document.querySelector('.carousel');
+
+    //Pause carousel on hover
+    carousel.addEventListener('mouseenter', () => {
+      carousel.style.animationPlayState = 'paused';
+    });
+
+    //Resume carousel when not hovering
+    carousel.addEventListener('mouseleave', () => {
+      carousel.style.animationPlayState = 'running';
+    });
+
+    //Pause carousel when hovering over skill icons
     document.querySelectorAll('.skill-icon').forEach(icon => {
       icon.addEventListener('mouseenter', () => {
         carousel.style.animationPlayState = 'paused';
       });
+      
+      //Resume carousel when not hovering over skill icons
       icon.addEventListener('mouseleave', () => {
         carousel.style.animationPlayState = 'running';
       });
