@@ -27,7 +27,7 @@
             snow: '#F5FEFD',
             porcelain: '#fffefc',
             cotton: '#fbfbf9',
-            darkbg: '#0a0809' // Almost black with subtle purple undertone
+            darkbg: '#0a0809'
           },
           keyframes: {
             fadeIn: {
@@ -37,292 +37,1078 @@
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(-10px)' },
+            },
+            carouselRotate: {
+              'from': { transform: 'rotateY(0)' },
+              'to': { transform: 'rotateY(360deg)' },
             }
           },
-          animation: { 
+          animation: {
             fadeIn: 'fadeIn 1s ease-out',
-            float: 'float 3s ease-in-out infinite'
+            float: 'float 3s ease-in-out infinite',
+            carouselRotate: 'carouselRotate 70s infinite linear'
           }
         }
       }
     }
   </script>
 </head>
-<body class="min-h-screen flex flex-col font-poppins bg-peach text-black dark:bg-black dark:text-white transition-colors duration-300">
+<body class="min-h-screen flex flex-col font-poppins bg-gradient-to-br from-peach to-beige/70 dark:from-black dark:to-[#0a0809] text-black dark:text-white transition-colors duration-300">
 
-  <!-- Navbar -->
-  <nav id="navbar" class="flex justify-between items-center bg-porcelain/80 dark:bg-black p-4 w-full fixed top-0 z-50 shadow-md backdrop-blur-sm transition-all duration-300">
-    <!-- Brand -->
-    <div class="flex items-center gap-2">
-      <a class="font-bold text-lg uppercase no-underline text-gray-800 dark:text-white tracking-widest" href="index.html">MJR Dlomo</a>
-    </div>
-
-    <!-- Links -->
-    <ul class="flex gap-6 hidden md:flex">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="skills.html" class="nav-link">Skills</a></li>
-      <li><a href="resume.html" class="nav-link">Resume</a></li>
-      <li><a href="project.html" class="nav-link">Projects</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
-
-    <!-- Right: Socials + Theme Toggle + CV -->
-    <div class="flex items-center gap-3">
-    
-      <!-- Social Icons -->
-      <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
-        <i class="fa-brands fa-github"></i>
-      </a>
-
-      <!-- Theme Toggle -->
-      <button id="theme-toggle" class="h-10 w-10 bg-darkblue dark:bg-darkblue rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-darkpurple dark:hover:bg-darkpurple" aria-label="Toggle dark mode">
-        <i class="fa fa-moon text-white dark:hidden"></i>
-        <i class="fa fa-sun text-white hidden dark:block"></i>
-      </button>
-
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden menu-btn text-black dark:text-white text-2xl ml-2"><i class="fa fa-bars"></i></button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu (hidden by default) -->
-  <div class="mobile-menu hidden bg-beige/90 dark:bg-black w-full fixed top-16 left-0 z-40 shadow-md md:hidden flex flex-col items-center py-4 backdrop-blur-sm">
-    <ul class="flex flex-col gap-4 text-center">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="skills.html" class="nav-link">Skills</a></li>
-      <li><a href="resume.html" class="nav-link">Resume</a></li>
-      <li><a href="project.html" class="nav-link">Projects</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
+<!-- Navbar -->
+<nav id="navbar" class="flex justify-between items-center bg-porcelain/80 dark:bg-black p-4 w-full fixed top-0 z-50 shadow-md backdrop-blur-sm transition-all duration-300">
+  <!-- Brand -->
+  <div class="flex items-center gap-2">
+    <a class="font-bold text-lg uppercase no-underline text-gray-800 dark:text-white tracking-widest" href="#home">MJR Dlomo</a>
   </div>
 
-  <!-- Hero Section with subtle purple gradient -->
-  <section class="min-h-screen flex items-center justify-center relative pt-16 bg-gradient-to-br from-peach to-beige/70 dark:from-black dark:to-[#0a0809]">
-    <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+  <!-- Links -->
+  <ul class="flex gap-6 hidden md:flex">
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#skills" class="nav-link">Skills</a></li>
+    <li><a href="#resume" class="nav-link">Resume</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
 
-    <div class="container mx-auto px-4 py-12 relative z-10 animate-fadeIn">
-      <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+  <!-- Right: Socials + Theme Toggle + CV -->
+  <div class="flex items-center gap-3">
 
-        <!-- Profile Container -->
-       <div class="w-full lg:w-1/3 order-1 lg:order-1">
-          <div class="backdrop-blur-lg bg-beige/40 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-black rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30">
-            <!-- Profile Image with Gradient Fallback -->
-            <div class="flex justify-center mb-6">
-              <div class="relative w-48 h-48 group">
-                <!-- Gradient background (shown when image is missing or loading) -->
-                <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black shadow-lg border-4 border-beige dark:border-white flex items-center justify-center text-white text-5xl animate-float">
-                  <span class="initials font-bold text-4xl">MJD</span>
+    <!-- Social Icons -->
+    <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="h-10 w-10 bg-darkblue dark:bg-darkblue rounded-full flex justify-center items-center shadow cursor-pointer transition-colors duration-300 hover:bg-darkpurple dark:hover:bg-darkpurple" aria-label="Toggle dark mode">
+      <i class="fa fa-moon text-white dark:hidden"></i>
+      <i class="fa fa-sun text-white hidden dark:block"></i>
+    </button>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden menu-btn text-black dark:text-white text-2xl ml-2"><i class="fa fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- Mobile Menu (hidden by default) -->
+<div class="mobile-menu hidden bg-beige/90 dark:bg-black w-full fixed top-16 left-0 z-40 shadow-md md:hidden flex flex-col items-center py-4 backdrop-blur-sm">
+  <ul class="flex flex-col gap-4 text-center">
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#skills" class="nav-link">Skills</a></li>
+    <li><a href="#resume" class="nav-link">Resume</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center relative pt-16">
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+
+  <div class="container mx-auto px-4 py-12 relative z-10 animate-fadeIn">
+    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+
+      <!-- Profile Container -->
+      <div class="w-full lg:w-1/3 order-1 lg:order-1">
+        <div class="backdrop-blur-lg bg-beige/40 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-black rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30">
+          <!-- Profile Image with Gradient Fallback -->
+          <div class="flex justify-center mb-6">
+            <div class="relative w-48 h-48 group">
+              <!-- Gradient background (shown when image is missing or loading) -->
+              <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black shadow-lg border-4 border-beige dark:border-white flex items-center justify-center text-white text-5xl animate-float">
+                <span class="initials font-bold text-4xl">MJD</span>
+              </div>
+
+              <!-- Profile image (overlays the gradient) -->
+              <img src="img/profile.jpg"
+                   alt="Profile photo of Makhosazana Dlomo"
+                   class="absolute inset-0 w-48 h-48 object-cover rounded-full shadow-lg border-4 border-beige dark:border-white opacity-100 group-hover:opacity-0 transition-opacity duration-500 cursor-pointer"
+                   onerror="this.style.opacity='0'"
+                   loading="lazy">
+              <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500 cursor-pointer">
+                <span class="text-white font-medium text-center px-2">View Profile</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Name -->
+          <h2 class="text-2xl font-bold text-center text-black dark:text-white mb-4">Makhosazana Jennifer Rose Dlomo</h2>
+
+          <!-- Role Badges -->
+          <div class="flex flex-wrap justify-center gap-2 mb-6">
+            <span class="bg-gradient-to-r from-darkblue/10 to-darkpurple/10 dark:bg-gradient-to-br dark:from-black dark:to-darkpurple text-darkpurple dark:text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-darkpurple/20 dark:border-transparent">Software Engineer</span>
+            <span class="bg-gradient-to-r from-darkpurple/10 to-pink/10 dark:bg-gradient-to-br dark:from-darkpurple dark:to-black text-darkpurple dark:text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-pink/20 dark:border-transparent">Backend Developer</span>
+            <span class="bg-gradient-to-r from-pink/10 to-darkpurple/10 dark:bg-gradient-to-br dark:from-black dark:to-darkpurple text-darkpurple dark:text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-darkpurple/20 dark:border-transparent">Problem Solver</span>
+          </div>
+
+          <!-- Quick Contact -->
+          <div class="bg-gradient-to-r from-snow/50 to-porcelain/50 dark:bg-gradient-to-br dark:from-black/30  dark:via-darkpurple/30 dark:to-black/30 rounded-xl p-4 mb-6 shadow-inner">
+            <h3 class="font-semibold text-black dark:text-white mb-2 flex items-center gap-2">
+              <i class="fa-solid fa-address-card text-black"></i> Contact Info
+            </h3>
+            <a href="mailto:makhosijdlomo97@gmail.com" class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2 mb-2 hover:text-darkblue dark:hover:text-black transition-colors">
+              <i class="fa-solid fa-envelope text-black"></i> makhosazanajenniferdlomo@gmail.com
+            </a>
+            <p class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2 mb-2">
+              <i class="fa-solid fa-location-dot text-black"></i> South Africa
+            </p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex justify-center gap-4">
+            <!-- CV Download -->
+            <a href="cv.pdf" download class="px-4 py-2 bg-gradient-to-r from-black to-darkpurple text-white font-semibold rounded-full hover:from-darkpurple hover:to-darkblue transition-all duration-300 text-sm flex items-center gap-2 shadow-md transform hover:scale-105">
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+            <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/"
+               class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/KhosieDlomo"
+               class="h-10 w-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Container -->
+      <div class="w-full lg:w-2/3 order-2 lg:order-2 text-black dark:text-white">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Welcome to My Portfolio</h1>
+        <div class="backdrop-blur-lg dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30 mb-8">
+          <h2 class="text-2xl font-bold mb-4 text-darkpurple dark:text-pink">Hello, I'm <span class="text-black dark:text-white">Makhosazana Jennifer Rose Dlomo</span></h2>
+          <p class="mb-4 text-gray-800 dark:text-gray-200">
+            A passionate Software Engineering student from South Africa specializing in Backend Development.
+            I'm focused on building robust, scalable solutions and continuously expanding my programming expertise.
+          </p>
+          <p class="text-gray-800 dark:text-gray-200">
+            Here, you will get a glimpse of my journey as a developer. Explore my projects, skills, and experiences.
+            Feel free to reach out if you'd like to collaborate or learn more about my work!
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+          <a class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md" href="#about">
+            <i class="fa-solid fa-user"></i> More About Me
+          </a>
+          <a href="#contact" class="bg-gradient-to-r from-darkpurple to-darkblue text-white font-semibold rounded-full px-6 py-3 hover:from-darkblue hover:to-darkpurple transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md">
+            <i class="fa-solid fa-briefcase"></i> Hire Me
+          </a>
+          <a href="#projects" class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md">
+            <i class="fa-solid fa-code"></i> My Work
+          </a>
+          <a href="mailto:makhosijdlomo97@gmail.com" class="bg-gradient-to-r from-darkblue to-darkpurple text-white font-semibold rounded-full px-6 py-3 hover:from-darkpurple hover:to-darkblue transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md" title="Email Me">
+            <i class="fa-solid fa-envelope"></i> Reach Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="min-h-screen flex flex-col justify-center items-center relative pt-16 animate-fadeIn">
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="max-w-3xl mx-auto">
+      <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink text-center">About</h4>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">Let me introduce myself.</h1>
+
+      <div class="flex flex-col items-center mb-8">
+        <div class="relative w-48 h-48 mb-6">
+          <!-- Gradient background (shown when image is missing or loading) -->
+          <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black shadow-lg border-4 border-porcelain dark:border-white flex items-center justify-center text-white text-5xl animate-float">
+            <span class="initials font-bold text-4xl">MJD</span>
+          </div>
+
+          <!-- Profile image (overlays the gradient) -->
+          <img src="images/profile.jpg"
+               alt="Profile photo of Makhosazana Dlomo"
+               class="absolute inset-0 w-48 h-48 object-cover rounded-full shadow-lg border-4 border-porcelain dark:border-white opacity-100 transition-opacity duration-500"
+               onerror="this.style.opacity='0'"
+               loading="lazy">
+        </div>
+      </div>
+
+      <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+        <h3 class="text-2xl font-bold mb-4 text-darkpurple dark:text-pink">About Me</h3>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          I'm a Software Engineering student with a passion for building logical, data-driven solutions that make an impact. My background in Mathematics, Statistics, and certifications in System Development and Technical Support allow me to bridge theory with real-world execution.
+          I thrive on solving complex challenges, writing clean and efficient code, and creating software that puts users first.
+        </p>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          I'm motivated by continuous learning and collaboration.My goal is to contribute to meaningful projects, grow alongside innovative teams, and expand my expertise as a well-rounded software engineer.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="min-h-screen flex flex-col justify-center items-center pt-16 animate-fadeIn">
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink">Technical Expertise</h4>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">My Skills</h1>
+      <p class="mb-12 text-gray-700 dark:text-gray-300">A comprehensive overview of my technical and professional capabilities</p>
+
+      <!-- Skills Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Programming Languages Card -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="h-12 w-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+              <i class="fa-solid fa-code text-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Programming Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-6 justify-center">
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Python</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">C#</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">C++</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Java</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">HTML</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development Card -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="h-12 w-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+              <i class="fa-solid fa-laptop-code text-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Web Development</h3>
+          </div>
+          <div class="flex flex-wrap gap-6 justify-center">
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">JavaScript</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">TypeScript</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Flask</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="ASP.NET" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">ASP.NET</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Docker</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">React</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database Management Card -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="h-12 w-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+              <i class="fa-solid fa-database text-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Database Management</h3>
+          </div>
+          <div class="flex flex-wrap gap-6 justify-center">
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Firebase</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">SQL Server</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">SQLite</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">MongoDB</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Soft Skills Section -->
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink">Professional Competencies</h4>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">Soft Skills</h1>
+      <p class="mb-12 text-gray-700 dark:text-gray-300">Professional abilities and competencies that complement my technical expertise</p>
+
+      <!-- Soft Skills Grid with Flip Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+        <!-- Problem-Solving -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <!-- Front -->
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-lightbulb text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Problem-Solving</h3>
+            </div>
+            <!-- Back -->
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Analytical approach to identifying and resolving complex technical challenges</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task Prioritization -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-list-check text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Task Prioritization</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Effective time management and resource allocation for optimal productivity</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Collaboration -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-people-group text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Team Collaboration</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Strong ability to work effectively in cross-functional teams and contribute to shared goals</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SDLC -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-diagram-project text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">SDLC Knowledge</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Understanding of Software Development Life Cycle phases and best practices</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agile Methodology -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-arrows-spin text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Agile Methodology</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Proficiency in Agile/Scrum practices and iterative development approaches</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Test Case Design -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-vial text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Test Case Design</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Creating comprehensive test case scenarios and test execution documentation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Acceptance Testing -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-clipboard-check text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">User Acceptance Testing</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">UAT coordination and validation of software against user requirements</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quality Assurance -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-shield-halved text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Quality Assurance</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Commitment to code quality, testing standards, and continuous improvement</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Office Suite -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-brands fa-microsoft text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Office Suite</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Proficiency in Word, Excel, PowerPoint, Teams, and Outlook</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Communication -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-pen-fancy text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Communication</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Clear technical documentation and effective written & verbal communication</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Critical Thinking -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-brain text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Critical Thinking</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Logical reasoning and analytical skills for informed decision-making</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adaptability -->
+        <div class="skill-flip-card h-32 cursor-pointer perspective">
+          <div class="skill-flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div class="skill-flip-card-front absolute w-full h-full backface-hidden backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-xl p-4 shadow-lg border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center justify-center">
+              <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-darkpurple to-pink rounded-lg mb-3">
+                <i class="fa-solid fa-leaf text-white text-sm"></i>
+              </div>
+              <h3 class="text-sm font-bold text-darkpurple dark:text-pink text-center">Adaptability</h3>
+            </div>
+            <div class="skill-flip-card-back absolute w-full h-full backface-hidden backdrop-blur-lg bg-gradient-to-br from-darkpurple to-pink rounded-xl p-4 shadow-lg border border-pink/50 flex items-center justify-center transform rotate-y-180">
+              <p class="text-white text-xs text-center leading-relaxed">Quick learner with flexibility to work in dynamic and changing environments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resume Section -->
+<section id="resume" class="min-h-screen flex flex-col justify-center items-center relative pt-16 animate-fadeIn">
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink">Professional Profile</h4>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">My Resume</h1>
+        <p class="text-gray-700 dark:text-gray-300">My professional journey and education background</p>
+      </div>
+
+      <!-- Download Resume Button -->
+      <div class="text-center mb-12">
+        <a href="cv.pdf" download class="bg-gradient-to-r from-darkpurple to-pink text-white font-semibold rounded-full px-8 py-3 hover:from-pink hover:to-darkpurple transition-all duration-300 inline-flex items-center gap-2">
+          <i class="fa-solid fa-download"></i> Download PDF Resume
+        </a>
+      </div>
+
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Work Experience Column -->
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-darkpurple dark:text-pink flex items-center gap-2">
+            <i class="fa-solid fa-briefcase"></i> Work Experience
+          </h3>
+
+          <div class="space-y-6">
+            <!-- Experience 1: Junior Business Analyst -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-bold text-darkpurple dark:text-pink">Junior Business Analyst</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Kaelo, Randburg, South Africa</p>
                 </div>
-                
-                <!-- Profile image (overlays the gradient) -->
-                <img src="img/profile.jpg" 
-                     alt="Profile photo of Makhosazana Dlomo" 
-                     class="absolute inset-0 w-48 h-48 object-cover rounded-full shadow-lg border-4 border-beige dark:border-white opacity-100 group-hover:opacity-0 transition-opacity duration-500 cursor-pointer"
-                     onerror="this.style.opacity='0'"
-                     loading="lazy">
-                <div class="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-darkpurple to-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500 cursor-pointer">
-                  <span class="text-white font-medium text-center px-2">View Profile</span>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full whitespace-nowrap">Mar 2024 – Jul 2024</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                <li>Analyzed business requirements and translated them into requirement and functional specifications for developers</li>
+                <li>Assisted in developing user acceptance testing plans, ensuring software solutions met business needs and user expectations</li>
+                <li>Evaluated software solutions and participated in vendor selection processes to align with company needs</li>
+                <li>Interacted with internal customers to understand business needs and translate them into requirements and project scope</li>
+              </ul>
+            </div>
+
+            <!-- Experience 2: System Development Intern -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-bold text-darkpurple dark:text-pink">System Development Intern</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Kaelo, Rosebank, South Africa</p>
                 </div>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full whitespace-nowrap">Mar 2023 – Feb 2024</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                <li>Prepared user training manuals and maintained systems once operational</li>
+                <li>Developed and tested software solutions, enhancing system functionalities and streamlining operational processes</li>
+                <li>Collaborated with cross-functional teams to gather requirements, ensuring alignment with user needs and project goals</li>
+                <li>Conducted system performance evaluations, identifying areas for improvement and recommending technical solutions</li>
+              </ul>
+            </div>
+
+            <!-- Experience 3: Examination Assistant -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-bold text-darkpurple dark:text-pink">Examination Assistant</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">South West Gauteng College, Dobsonville, South Africa</p>
+                </div>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full whitespace-nowrap">Sep 2020 – Dec 2021</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                <li>Assisted in preparation and distribution of examination materials, ensuring adequate resources for all candidates</li>
+                <li>Coordinated exam logistics including room setup and candidate check-in to facilitate smooth examination processes</li>
+                <li>Monitored examination environments to enforce compliance with regulations and maintain integrity during assessments</li>
+                <li>Provided support to examiners by managing candidate inquiries, enhancing communication and overall experience</li>
+                <li>Maintained well-organized filing system for easy access to examination materials, records, and reports</li>
+              </ul>
+            </div>
+
+            <!-- Experience 4: Networking IT Intern -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-bold text-darkpurple dark:text-pink">Networking IT Intern</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Yarona Core, Rosebank, South Africa</p>
+                </div>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full whitespace-nowrap">Mar 2020 – Sep 2020</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+                <li>Configured and maintained network devices, optimizing connectivity and data transfer across the organization</li>
+                <li>Assisted in troubleshooting network issues, improving system uptime and user satisfaction through prompt resolution</li>
+                <li>Developed documentation for network configurations and procedures, facilitating knowledge sharing and onboarding</li>
+                <li>Collaborated with IT team to implement security protocols, reducing vulnerabilities and safeguarding sensitive information</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Column -->
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-darkpurple dark:text-pink flex items-center gap-2">
+            <i class="fa-solid fa-graduation-cap"></i> Education
+          </h3>
+
+          <div class="space-y-6">
+            <!-- Education 1: Software Engineering -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-darkpurple dark:text-pink">Software Engineering</h4>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full">2025/12</span>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">Currently pursuing advanced knowledge in software development, algorithms, data structures, and systems design with a focus on backend development and scalable solutions.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Python</span>
+                <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Java</span>
+                <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Algorithms</span>
+                <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">System Design</span>
+                <span class="tech-tag bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">Agile Methodolohy</span>
               </div>
             </div>
 
-            <!-- Name -->
-            <h2 class="text-2xl font-bold text-center text-black dark:text-white mb-4">Makhosazana Jennifer Rose Dlomo</h2>
-
-            <!-- Role Badges -->
-             <div class="flex flex-wrap justify-center gap-2 mb-6">
-              <span class="bg-gradient-to-r from-darkblue/10 to-darkpurple/10 dark:bg-gradient-to-br dark:from-black dark:to-darkpurple text-darkpurple dark:text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-darkpurple/20 dark:border-transparent">Software Engineer</span>
-              <span class="bg-gradient-to-r from-darkpurple/10 to-pink/10 dark:bg-gradient-to-br dark:from-darkpurple dark:to-black text-darkpurple dark:text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-pink/20 dark:border-transparent">Backend Developer</span>
-              <span class="bg-gradient-to-r from-pink/10 to-darkpurple/10 dark:bg-gradient-to-br dark:from-black dark:to-darkpurple text-darkpurple dark:text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-darkpurple/20 dark:border-transparent">Problem Solver</span>
+            <!-- Education 2: Higher Certificate in Mathematics and Statistics -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-darkpurple dark:text-pink">Higher Certificate in Mathematics and Statistics</h4>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full">2023/12</span>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">Advanced study in mathematical theory, statistical analysis, and data interpretation, providing a strong analytical foundation for software engineering applications.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Mathematics</span>
+                <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Statistics</span>
+                <span class="tech-tag bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded">Data Analysis</span>
+              </div>
             </div>
 
-            <!-- Quick Contact -->
-            <div class="bg-gradient-to-r from-snow/50 to-porcelain/50 dark:bg-gradient-to-br dark:from-black/30  dark:via-darkpurple/30 dark:to-black/30 rounded-xl p-4 mb-6 shadow-inner">
-              <h3 class="font-semibold text-black dark:text-white mb-2 flex items-center gap-2">
-                <i class="fa-solid fa-address-card text-black"></i> Contact Info
-              </h3>
-              <a href="mailto:makhosijdlomo97@gmail.com" class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2 mb-2 hover:text-darkblue dark:hover:text-black transition-colors">
-                <i class="fa-solid fa-envelope text-black"></i> makhosijdlomo97@gmail.com
-              </a>
-              <p class="text-gray-700 dark:text-gray-200 text-sm flex items-center gap-2 mb-2">
-                <i class="fa-solid fa-location-dot text-black"></i> South Africa
-              </p>
+            <!-- Education 3: Software Development Learnership -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-darkpurple dark:text-pink">Software Development Learnership</h4>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full">2023/02</span>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">Practical training program focused on software development methodologies, programming languages, and real-world application development.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tech-tag bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs px-2 py-1 rounded">Software Development</span>
+                <span class="tech-tag bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs px-2 py-1 rounded">Programming</span>
+                <span class="tech-tag bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs px-2 py-1 rounded">SDLC</span>
+              </div>
             </div>
 
-            <!-- Social Links -->
-            <div class="flex justify-center gap-4">
-              <!-- CV Download -->
-              <a href="cv.pdf" download class="px-4 py-2 bg-gradient-to-r from-black to-darkpurple text-white font-semibold rounded-full hover:from-darkpurple hover:to-darkblue transition-all duration-300 text-sm flex items-center gap-2 shadow-md transform hover:scale-105">
-                <i class="fa-solid fa-download"></i> Download CV
-              </a>
-              <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" 
-                 class="h-10 w-10 bg-darkblue rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/KhosieDlomo" 
-                 class="h-10 w-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-darkpurple transition-colors">
-                <i class="fa-brands fa-github"></i>
-              </a>
+            <!-- Education 4: Technical Support Learnership -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-darkpurple dark:text-pink">Technical Support Learnership</h4>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full">2022/01</span>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">Hands-on technical training covering IT support, troubleshooting, system administration, and customer service in technology environments.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tech-tag bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs px-2 py-1 rounded">Technical Support</span>
+                <span class="tech-tag bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs px-2 py-1 rounded">Troubleshooting</span>
+                <span class="tech-tag bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs px-2 py-1 rounded">IT Systems</span>
+              </div>
+            </div>
+
+            <!-- Education 5: NCV Level 4 -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-darkpurple dark:text-pink">NCV Level 4 – Information Technology & Computer Science</h4>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full">2019/12</span>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">Comprehensive program covering networking fundamentals, technical support, hardware maintenance, and programming basics with hands-on projects and practical applications.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Networking</span>
+                <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">IT Fundamentals</span>
+                <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Hardware</span>
+                <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Technical Support</span>
+                <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">VB Programming</span>
+                <span class="tech-tag bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded">Multimedia</span>
+              </div>
+            </div>
+
+            <!-- Education 6: High School Diploma -->
+            <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold text-darkpurple dark:text-pink">High School Diploma – Science</h4>
+                <span class="text-sm bg-darkpurple/10 dark:bg-pink/10 text-darkpurple dark:text-pink px-2 py-1 rounded-full">2015/12</span>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300">Completed high school education with a focus on science subjects, building a strong foundation in scientific thinking and analytical problem-solving.</p>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="tech-tag bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs px-2 py-1 rounded">Mathematics</span>
+                <span class="tech-tag bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs px-2 py-1 rounded">Physics</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Content Container -->
-        <div class="w-full lg:w-2/3 order-2 lg:order-2 text-black dark:text-white">
-          <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Welcome to My Portfolio</h1>
-          <div class="backdrop-blur-lg dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-beige/50 dark:border-darkpurple/30 mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-darkpurple dark:text-pink">Hello, I'm <span class="text-black dark:text-white">Makhosazana Jennifer Dlomo</span></h2>
-            <p class="mb-4 text-gray-800 dark:text-gray-200">
-              A passionate Software Engineering student from South Africa specializing in Backend Development. 
-              I'm focused on building robust, scalable solutions and continuously expanding my programming expertise.
-            </p>
-            <p class="text-gray-800 dark:text-gray-200">
-              Here, you will get a glimpse of my journey as a developer. Explore my projects, skills, and experiences. 
-              Feel free to reach out if you'd like to collaborate or learn more about my work!
-            </p>
-          </div>
+          <!-- Certifications -->
+          <h3 class="text-2xl font-bold mb-6 mt-8 text-darkpurple dark:text-pink flex items-center gap-2">
+            <i class="fa-solid fa-certificate"></i> Certifications
+          </h3>
 
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-             <a class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md" href="about.html">
-              <i class="fa-solid fa-user"></i> More About Me
-            </a>
-            <a href="contact.html" class="bg-gradient-to-r from-darkpurple to-darkblue text-white font-semibold rounded-full px-6 py-3 hover:from-darkblue hover:to-darkpurple transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md">
-              <i class="fa-solid fa-briefcase"></i> Hire Me
-            </a>
-            <a href="project.html" class="border-2 border-darkpurple text-darkpurple dark:text-white dark:border-pink hover:bg-darkpurple hover:text-white font-semibold rounded-full px-6 py-3 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md">
-              <i class="fa-solid fa-code"></i> My Work
-            </a>
-            <a href="mailto:makhosijdlomo97@gmail.com" class="bg-gradient-to-r from-darkblue to-darkpurple text-white font-semibold rounded-full px-6 py-3 hover:from-darkpurple hover:to-darkblue transition-all duration-300 flex items-center gap-2 transform hover:scale-105 shadow-md" title="Email Me">
-              <i class="fa-solid fa-envelope"></i> Reach Me
-            </a>
+          <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+            <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+              <li class="flex items-start">
+                <i class="fa-solid fa-award text-darkpurple dark:text-pink mt-1 mr-3"></i>
+                <span>WeThinkCode_ GenAI</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-award text-darkpurple dark:text-pink mt-1 mr-3"></i>
+                <span>FNB App Academy - Fullstack Development</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-award text-darkpurple dark:text-pink mt-1 mr-3"></i>
+                <span>Introduction to Programming Using Python</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa-solid fa-award text-darkpurple dark:text-pink mt-1 mr-3"></i>
+                <span>Financial Education</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-   <!-- Footer - Updated for light mode -->
-  <footer class="mt-auto bg-porcelain dark:bg-black py-8 text-gray-800 dark:text-white border-t border-cotton dark:border-gray-800">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <div class="flex gap-6 mb-4 md:mb-0">
-        <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-black dark:text-white text-xl hover:text-darkpurple transition-colors duration-300 transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-black dark:text-white text-xl hover:text-darkpurple dark:hover:text-gray-300 transition-colors duration-300 transform hover:scale-110"><i class="fa-brands fa-github"></i></a>
+<!-- Projects Section -->
+<section id="projects" class="min-h-screen flex flex-col justify-center items-center relative pt-16 animate-fadeIn">
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
+
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="max-w-5xl mx-auto text-center">
+      <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink">Portfolio</h4>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">My Projects</h1>
+      <p class="mb-12 text-gray-700 dark:text-gray-300">Here are some of the projects I've worked on that showcase my skills and passion for development.</p>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+            <i class="fa-solid fa-code text-4xl text-darkpurple dark:text-pink"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Project 1</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">Short description of project 1 showcasing your skills and technologies used.</p>
+          <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+            <i class="fa-solid fa-laptop-code text-4xl text-darkpurple dark:text-pink"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Project 2</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">Short description of project 2 showcasing your skills and technologies used.</p>
+          <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+            <i class="fa-solid fa-database text-4xl text-darkpurple dark:text-pink"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Project 3</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">Short description of project 3 showcasing your skills and technologies used.</p>
+          <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+            <i class="fa-brands fa-python text-4xl text-darkpurple dark:text-pink"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Python Project</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">A Python-based application demonstrating backend development skills.</p>
+          <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+            <i class="fa-solid fa-mobile-alt text-4xl text-darkpurple dark:text-pink"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Responsive Design</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">A responsive web application with modern UI/UX principles.</p>
+          <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-full h-48 rounded-lg mb-4 bg-gradient-to-br from-darkpurple/20 to-pink/20 dark:from-darkpurple/30 dark:to-pink/30 flex items-center justify-center">
+            <i class="fa-solid fa-server text-4xl text-darkpurple dark:text-pink"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-darkpurple dark:text-pink">Backend System</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm">A robust backend system with API integration and database management.</p>
+          <a href="#" target="_blank" class="text-darkpurple dark:text-pink font-semibold hover:underline flex items-center gap-1">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          </a>
+        </div>
       </div>
-      <div class="text-sm text-center md:text-left mb-4 md:mb-0 text-gray-600 dark:text-gray-300">
-        <span>© Copyright MaDlomo 2025.</span> 
-        <span>Design by MJR Dlomo</span>
+
+      <!-- Call to Action -->
+      <div class="mt-16 text-center">
+        <p class="text-gray-700 dark:text-gray-300 mb-6">Interested in seeing more of my work or discussing a project?</p>
+        <a href="#contact" class="bg-gradient-to-r from-darkpurple to-pink text-white font-semibold rounded-full px-8 py-3 hover:from-pink hover:to-darkpurple transition-all duration-300 inline-flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Get In Touch
+        </a>
       </div>
-      <a class="text-darkpurple dark:text-white hover:text-pink transition-colors duration-300 back-to-top transform hover:scale-110" title="Back to Top" href="#">
-        <i class="fa-solid fa-arrow-up-long text-xl"></i>
-      </a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script>
-    // Dark / Light mode toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    if (localStorage.getItem('theme') === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-    } else { html.classList.remove('dark'); }
+<!-- Contact Section -->
+<section id="contact" class="min-h-screen flex flex-col justify-center items-center relative pt-16 animate-fadeIn">
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-darkpurple/5 z-0"></div>
 
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-      // Update navbar when theme changes
-      updateNavbarBackground();
-    });
+  <div class="container mx-auto px-4 py-12 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h4 class="text-lg font-semibold mb-2 text-darkpurple dark:text-pink">Contact</h4>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-darkpurple to-pink bg-clip-text text-transparent">Get In Touch</h1>
+      <p class="mb-8 text-gray-700 dark:text-gray-300">I'd love to hear from you and discuss how we can work together.</p>
 
-    // Mobile menu toggle
-    const menuBtn = document.querySelector('.menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      <!-- Info Boxes -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center">
+          <div class="h-14 w-14 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white mb-4">
+            <i class="fa fa-map-marker-alt text-xl"></i>
+          </div>
+          <h3 class="mb-2 font-bold text-darkpurple dark:text-pink">Location</h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">Ivory Park 2, Midrand, 1693, Johannesburg, Gauteng, South Africa</p>
+        </div>
 
-    // Smooth scroll to top
-    document.querySelectorAll('.back-to-top').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center">
+          <div class="h-14 w-14 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white mb-4">
+            <i class="fa fa-phone text-xl"></i>
+          </div>
+          <h3 class="mb-2 font-bold text-darkpurple dark:text-pink">Phone</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            <a href="tel:+27795755795" class="hover:text-darkpurple dark:hover:text-pink transition-colors duration-300">+27 79 575 5795</a>
+          </p>
+        </div>
 
-    // Navbar scroll effect for dark mode
-    const navbar = document.getElementById('navbar');
-    
-    function updateNavbarBackground() {
-      const isDarkMode = html.classList.contains('dark');
-      const isScrolled = window.scrollY > 50;
-      
-      if (isDarkMode && isScrolled) {
-        navbar.classList.remove('dark:bg-black');
-        navbar.classList.add('dark:bg-transparent');
-        navbar.classList.remove('shadow-md');
-      } else if (isDarkMode) {
-        navbar.classList.add('dark:bg-black');
-        navbar.classList.remove('dark:bg-transparent');
-        navbar.classList.add('shadow-md');
-      } else {
-        // Light mode behavior (no change)
-        navbar.classList.remove('dark:bg-transparent');
-      }
-    }
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-6 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 flex flex-col items-center">
+          <div class="h-14 w-14 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white mb-4">
+            <i class="fa fa-envelope text-xl"></i>
+          </div>
+          <h3 class="mb-2 font-bold text-darkpurple dark:text-pink">Email</h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm break-words hyphens-auto max-w-full mx-auto text-center md:text-left">
+            <a href="mailto:makhosazanajenniferdlomo@gmail.com"
+               class="hover:text-darkpurple dark:hover:text-pink transition-colors duration-300">
+              makhosazanajenniferdlomo@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
 
-    // Initial call
+      <!-- Contact Form -->
+      <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
+        <h3 class="text-2xl font-bold mb-6 text-darkpurple dark:text-pink text-center">Send Me a Message</h3>
+
+        <form name="contactForm" id="contactForm" method="post" action="" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <input name="contactName" type="text" id="contactName" placeholder="Your Name" required
+                     class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
+            </div>
+            <div>
+              <input name="ContactEmail" type="email" id="ContactEmail" placeholder="Your Email" required
+                     class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
+            </div>
+          </div>
+
+          <div>
+            <input name="ContactSubject" type="text" id="ContactSubject" placeholder="Subject"
+                   class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
+          </div>
+
+          <div>
+              <textarea name="ContactMessage" id="ContactMessage" cols="30" rows="5" placeholder="Your Message" required
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300"></textarea>
+          </div>
+
+          <button type="submit"
+                  class="w-full bg-gradient-to-r from-darkpurple to-pink text-white font-semibold rounded-lg px-8 py-3 hover:from-pink hover:to-darkpurple transition-all duration-300 transform hover:scale-105">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="mt-auto bg-porcelain dark:bg-black py-8 text-gray-800 dark:text-white border-t border-cotton dark:border-gray-800">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+    <div class="flex gap-6 mb-4 md:mb-0">
+      <a href="https://www.linkedin.com/in/makhosazana-jennifer-dlomo-231930272/" aria-label="LinkedIn Profile" class="text-black dark:text-white text-xl hover:text-darkpurple transition-colors duration-300 transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/KhosieDlomo" aria-label="GitHub Profile" class="text-black dark:text-white text-xl hover:text-darkpurple dark:hover:text-gray-300 transition-colors duration-300 transform hover:scale-110"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <div class="text-sm text-center md:text-left mb-4 md:mb-0 text-gray-600 dark:text-gray-300">
+      <span>© Copyright MaDlomo 2025.</span>
+      <span>Design by MJR Dlomo</span>
+    </div>
+    <a class="text-darkpurple dark:text-white hover:text-pink transition-colors duration-300 back-to-top transform hover:scale-110" title="Back to Top" href="#">
+      <i class="fa-solid fa-arrow-up-long text-xl"></i>
+    </a>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Dark / Light mode toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  if (localStorage.getItem('theme') === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  } else { html.classList.remove('dark'); }
+
+  themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     updateNavbarBackground();
-    
-    // Listen for scroll events
-    window.addEventListener('scroll', updateNavbarBackground);
-  </script>
+  });
 
-  <!-- Styles -->
-  <style>
-    .nav-link {
-      @apply text-gray-800 dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
-    }
-    
-    /* Add a subtle purple glow effect in dark mode */
-    .dark .backdrop-blur-lg {
-      box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
-    }
+  // Mobile menu toggle
+  const menuBtn = document.querySelector('.menu-btn');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    /* Custom scrollbar for light mode */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #fbfbf9;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #812b49;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #631c38;
-    }
+  // Smooth scroll to top
+  document.querySelectorAll('.back-to-top').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 
-    /* Profile image initials styling */
-    .initials {
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+
+  function updateNavbarBackground() {
+    const isDarkMode = html.classList.contains('dark');
+    const isScrolled = window.scrollY > 50;
+
+    if (isDarkMode && isScrolled) {
+      navbar.classList.remove('dark:bg-black');
+      navbar.classList.add('dark:bg-transparent');
+      navbar.classList.remove('shadow-md');
+    } else if (isDarkMode) {
+      navbar.classList.add('dark:bg-black');
+      navbar.classList.remove('dark:bg-transparent');
+      navbar.classList.add('shadow-md');
     }
-  </style>
-  <!-- Styles -->
-  <style>
-    .nav-link {
-      @apply text-black dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
-    }
-    
-    /* Add a subtle purple glow effect in dark mode */
-    .dark .backdrop-blur-lg {
-      box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
-    }
-  </style>
+  }
+
+  updateNavbarBackground();
+  window.addEventListener('scroll', updateNavbarBackground);
+
+  // Skills section - show name on hover
+  document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const name = item.querySelector('.skill-name');
+      if (name) {
+        name.classList.add('opacity-100');
+        name.classList.remove('opacity-0');
+      }
+    });
+
+    item.addEventListener('mouseleave', () => {
+      const name = item.querySelector('.skill-name');
+      if (name) {
+        name.classList.remove('opacity-100');
+        name.classList.add('opacity-0');
+      }
+    });
+  });
+</script>
+
+<!-- Styles -->
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .nav-link {
+    @apply text-gray-800 dark:text-white font-medium px-2 py-1 transition-colors duration-300 hover:text-darkpurple dark:hover:text-pink;
+  }
+
+  .dark .backdrop-blur-lg {
+    box-shadow: 0 0 20px rgba(129, 43, 73, 0.1);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fbfbf9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #812b49;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #631c38;
+  }
+
+  .initials {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  /* 3D Flip Card Styles */
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .skill-flip-card:hover .skill-flip-card-inner {
+    transform: rotateY(180deg);
+  }
+</style>
 </body>
 </html>
