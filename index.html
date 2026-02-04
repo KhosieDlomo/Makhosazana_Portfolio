@@ -14,6 +14,10 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!--EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -299,13 +303,13 @@
           </div>
         </div>
 
-        <!-- Web Development Card -->
+        <!-- Development Card -->
         <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
           <div class="flex items-center justify-center gap-3 mb-6">
             <div class="h-12 w-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
               <i class="fa-solid fa-laptop-code text-lg"></i>
             </div>
-            <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Web Development</h3>
+            <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Development</h3>
           </div>
           <div class="flex flex-wrap gap-6 justify-center">
             <div class="skill-item flex flex-col items-center">
@@ -363,6 +367,38 @@
             <div class="skill-item flex flex-col items-center">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
               <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workflow Card -->
+        <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="h-12 w-12 bg-gradient-to-r from-darkpurple to-pink rounded-full flex items-center justify-center text-white">
+              <i class="fa-solid fa-database text-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-darkpurple dark:text-pink">Workflow Management</h3>
+          </div>
+          <div class="flex flex-wrap gap-6 justify-center">
+            <div class="skill-item flex flex-col items-center">
+              <img src="agile.png" alt="agile" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Agile</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="kanban.png" alt="kanban" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Kanban</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+              <img src="scrum.png" alt="scrum" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">Scrum</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" alt="GitLab" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">GitLab</span>
+            </div>
+            <div class="skill-item flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" alt="GitHub" class="w-14 h-14 hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <span class="skill-name text-xs mt-2 text-gray-700 dark:text-gray-300 font-semibold opacity-0 transition-opacity duration-300">GitHub</span>
             </div>
           </div>
         </div>
@@ -938,39 +974,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Contact Form -->
-      <div class="backdrop-blur-lg bg-porcelain/60 dark:bg-gradient-to-br dark:from-black dark:via-darkpurple dark:to-darkbg rounded-2xl p-8 shadow-xl border border-porcelain/50 dark:border-darkpurple/30">
-        <h3 class="text-2xl font-bold mb-6 text-darkpurple dark:text-pink text-center">Send Me a Message</h3>
-
-        <form name="contactForm" id="contactForm" method="post" action="" class="space-y-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <input name="contactName" type="text" id="contactName" placeholder="Your Name" required
-                     class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
-            </div>
-            <div>
-              <input name="ContactEmail" type="email" id="ContactEmail" placeholder="Your Email" required
-                     class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
-            </div>
-          </div>
-
-          <div>
-            <input name="ContactSubject" type="text" id="ContactSubject" placeholder="Subject"
-                   class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300" />
-          </div>
-
-          <div>
-              <textarea name="ContactMessage" id="ContactMessage" cols="30" rows="5" placeholder="Your Message" required
-                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-darkpurple dark:focus:ring-pink transition-colors duration-300"></textarea>
-          </div>
-
-          <button type="submit"
-                  class="w-full bg-gradient-to-r from-darkpurple to-pink text-white font-semibold rounded-lg px-8 py-3 hover:from-pink hover:to-darkpurple transition-all duration-300 transform hover:scale-105">
-            Send Message
-          </button>
-        </form>
-      </div>
     </div>
   </div>
 </section>
@@ -1019,9 +1022,9 @@
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
+  }); 
 
-  // Navbar scroll effect
+ // Navbar scroll effect
   const navbar = document.getElementById('navbar');
 
   function updateNavbarBackground() {
@@ -1111,6 +1114,58 @@
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
+
+  /* Skill items - create positioning context */
+    .skill-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Skill name tooltip styling */
+    .skill-item .skill-name {
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      color: #374151;
+      font-weight: 600;
+      background-color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      white-space: nowrap;
+      z-index: 50;
+    }
+
+    /* Dark mode styles for tooltip */
+    .dark .skill-item .skill-name {
+      color: #d1d5db;
+      background-color: #1f2937;
+    }
+
+    /* Show tooltip on hover */
+    .skill-item:hover .skill-name {
+      opacity: 1;
+    }
+
+    /* Ensure parent containers don't hide overflow */
+    .skill-item {
+      overflow: visible !important;
+    }
+    .backdrop-blur-lg {
+      overflow: visible !important;
+    }
+    .backdrop-blur-lg > div:last-child {
+      padding-bottom: 2rem; /* Add extra space for tooltips */
+    }
 
   .skill-flip-card:hover .skill-flip-card-inner {
     transform: rotateY(180deg);
